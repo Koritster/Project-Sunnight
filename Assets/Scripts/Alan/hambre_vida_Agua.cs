@@ -92,7 +92,7 @@ public class hambre_vida_Agua : MonoBehaviour
             }
         }
         //----------------------------------------------------------------------------------------------------------
-        if (Input.GetKey(KeyCode.W))
+        /*if (Input.GetKey(KeyCode.W))
         {
             tiempoHambre -= Time.deltaTime * 0.5f;
             tiempoAgua -= Time.deltaTime * 0.5f;
@@ -102,7 +102,7 @@ public class hambre_vida_Agua : MonoBehaviour
         {
             tiempoHambre -= Time.deltaTime * 2f;
             tiempoAgua -= Time.deltaTime * 2f;
-        }
+        }*/
     }
 
     void ActualizarFillAmount(Image img, float valor)
