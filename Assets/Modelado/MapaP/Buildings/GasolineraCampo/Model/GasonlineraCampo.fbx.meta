@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: 78c106b65b96bc94da9b7801ef8ccec7
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bakeryA_bmp
+    second: {fileID: 2100000, guid: c2a7e85bcf9ec734dba3bf52dbaa958d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bakeryB_jpg
+    second: {fileID: 2100000, guid: d18991b1233e3da4489ccd3d955fbb07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bareMetal_jpg
+    second: {fileID: 2100000, guid: 16293e27020d1284fac4f3e7049914aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brick_jpg
+    second: {fileID: 2100000, guid: 0241a40d9795862418d00cdd9bfcb82f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: brushedMetal_jpg
+    second: {fileID: 2100000, guid: b77ec5583f8069941908b83f7d79150a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cappuccinoA_bmp
+    second: {fileID: 2100000, guid: 951ac75130a57db4ebb0f8962fb92e9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterA_bmp
+    second: {fileID: 2100000, guid: e441368b9447a2e418ca6d490dd1342c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterB_bmp
+    second: {fileID: 2100000, guid: 3e5cd378ef03e8543ac3d76c08d1c3bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterC_bmp
+    second: {fileID: 2100000, guid: 2f82a5e17fbb9144ba5c484c25006896, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterD_bmp
+    second: {fileID: 2100000, guid: a87f1ff9141272f45b0f308d589d9e1e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterE_bmp
+    second: {fileID: 2100000, guid: 804e53bbc87d40a4ebb58d7ad984de48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterF_bmp
+    second: {fileID: 2100000, guid: 8d054dd19f8614245a2fb8ecd2c5e51c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ceilingLights_jpg
+    second: {fileID: 2100000, guid: d1085a72c54778e4dba8a0080d223801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coffeePotA_jpg
+    second: {fileID: 2100000, guid: 211d75453e8c2d34abfaa7da1fbb7697, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coffeePotB_bmp
+    second: {fileID: 2100000, guid: a89ca296a4ba6f54298a545a53eb9d4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concreteSlabBlock_jpg
+    second: {fileID: 2100000, guid: cea16985ad30b5e46bef85d173b5ee0c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: coolerDoors_bmp
+    second: {fileID: 2100000, guid: 78192a4ec58a76d42927e64946373efb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: displayHoles_jpg
+    second: {fileID: 2100000, guid: 3c3d26bf89ab83044afce8b260581e51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: displayShelf_bmp
+    second: {fileID: 2100000, guid: 7b51c7d562941c9458e1dbf631d9b7a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpAB_bmp
+    second: {fileID: 2100000, guid: 0b5272a8cd8eb36478e4ca46a0ec8cdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpB_bmp
+    second: {fileID: 2100000, guid: ef8795d8ce6ebbd4890ea7166624cea3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpC_bmp
+    second: {fileID: 2100000, guid: bb8d2d3613221da42b6a0bd0668d5017, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpD_bmp
+    second: {fileID: 2100000, guid: 938d53138ca853644913f713ebd27400, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpE_bmp
+    second: {fileID: 2100000, guid: c0dd02fa0cd994a4cb95cb934f0ab0ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpF_bmp
+    second: {fileID: 2100000, guid: 1e3a288b84481a041aa9d2f14b593f9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: icedCoffeeA_bmp
+    second: {fileID: 2100000, guid: 631eb8d657a12444da2b5cfb2a057bba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: icedCoffeeB_jpg
+    second: {fileID: 2100000, guid: 66a61247735d13b468d9f0a54496ce10, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interiorWalls_bmp
+    second: {fileID: 2100000, guid: 8e7e1d17432f2e54cb93455cf49c23bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lowResTile_jpg
+    second: {fileID: 2100000, guid: 9ead7010e4578f0468b49ffc5bbb607b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lowResWoodGrain_jpg
+    second: {fileID: 2100000, guid: c3e2832187fbade4a870ac9e18fdb3a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: microwaveA_bmp
+    second: {fileID: 2100000, guid: ff035e773974f644590e40d3443a6058, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: microwaveB_bmp
+    second: {fileID: 2100000, guid: ebebbf8cf92d57f45ae27837b2f47efa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: microwaveC_bmp
+    second: {fileID: 2100000, guid: 1f97863bf1325624582e47f46c8d3357, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: napkinDispenserA_bmp
+    second: {fileID: 2100000, guid: 1cce4046846676d42bff452659452a1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: napkinDispenserB_bmp
+    second: {fileID: 2100000, guid: 36a30ecea3b946a47ad19bd7ac94f32f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: priceSignA_jpg
+    second: {fileID: 2100000, guid: f2d2a0a4a85fe054db658fb3cb1a92fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: priceSignB_jpg
+    second: {fileID: 2100000, guid: c0d9899649f4173479bd4f40c1704371, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: productA_jpg
+    second: {fileID: 2100000, guid: b4f31b3cbbb4fad459e42b57ed7830cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: productB_jpg
+    second: {fileID: 2100000, guid: f2a1c5f2ddcdabb439213de335769950, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: productC_jpg
+    second: {fileID: 2100000, guid: 2857e8ea0e26446489600d7dc83ce390, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: productD_jpg
+    second: {fileID: 2100000, guid: 860ce50248db3794bb5bdbd2605e7103, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: productE_jpg
+    second: {fileID: 2100000, guid: 47d0d92ac10eb8642829408881b0dd4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: productF_jpg
+    second: {fileID: 2100000, guid: 18760a023e24f3841a541e4167754acd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shingles2_bmp
+    second: {fileID: 2100000, guid: 0e08641c913961248bf0a7f31eb4e6c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: slushMachineA_jpg
+    second: {fileID: 2100000, guid: b2fb65c74673fde47978d4eb579dbecb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: slushMachineB_jpg
+    second: {fileID: 2100000, guid: db42fc3bf5e0b454c8bca9984943776f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: slushMachineTop_jpg
+    second: {fileID: 2100000, guid: 54998ae0f8733e646be753c2f6f61af3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smokingDisplayA_bmp
+    second: {fileID: 2100000, guid: 30e8dd1e3abe5034ba582c332e5c7e9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smokingDisplayB_bmp
+    second: {fileID: 2100000, guid: 5ff72aef49f1b2d47974518da08026e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: smokingDisplayC_bmp
+    second: {fileID: 2100000, guid: e7be9c95dfb1eae4aa8733ac9bb3e555, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sodaMachineFinal_jpg
+    second: {fileID: 2100000, guid: 0a136dc054030514a84f7ce4a3d40e9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strawsA_bmp
+    second: {fileID: 2100000, guid: eee42a5d5ae74a14aa5402c0f8711a47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: strawsB_bmp
+    second: {fileID: 2100000, guid: b996420f336c4ef4d898e934f2d8712f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: utensilsA_bmp
+    second: {fileID: 2100000, guid: c4a63c39331319d42bdcea5eedd29f5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: utensilsB_bmp
+    second: {fileID: 2100000, guid: 747477fd4874f814d8ce7538efb5e5b8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wallSiding2_bmp
+    second: {fileID: 2100000, guid: 07b87c1fc88866b468449a09d019bd3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windowGlass_tga
+    second: {fileID: 2100000, guid: dd1eaf51dbeeb954880c5dc8fb5f3133, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windowMount_jpg
+    second: {fileID: 2100000, guid: d5471463bb96fde40a696412d2653950, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bakeryA
+    second: {fileID: 2800000, guid: e75b1fdb2b06dbf48bd72e3eaea6527c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bakeryB
+    second: {fileID: 2800000, guid: fa26c52b64e49a848b8a513f8e7b3574, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: bareMetal
+    second: {fileID: 2800000, guid: 0caa98c295680d84e9023e5014418574, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: brick
+    second: {fileID: 2800000, guid: bfce6933289199e4fb929e4d4d166ac5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cappuccinoA
+    second: {fileID: 2800000, guid: 5a7da204ef471e3448c7a1bc41ae5875, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterA
+    second: {fileID: 2800000, guid: 06212dbc22497f346990c795ab7f5858, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterB
+    second: {fileID: 2800000, guid: 988b4f9d3ec177e45b896949c2f51ce9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterC
+    second: {fileID: 2800000, guid: 97757867122759e49a5821a7baa7acbf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterD
+    second: {fileID: 2800000, guid: 38482428b6c0ddf42855f9e481482178, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterE
+    second: {fileID: 2800000, guid: 57c1c77e7bfb5954eab3b3cb285aa89e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cashRegisterF
+    second: {fileID: 2800000, guid: deec05987a50cb7449d39213e1b9a8e4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ceilingLights
+    second: {fileID: 2800000, guid: cc0185f8ec73af7479b29cad26a71525, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coffeePotA
+    second: {fileID: 2800000, guid: b109fb8e27bc6044ba983015255bd7a1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coffeePotB
+    second: {fileID: 2800000, guid: b248016df3ad5cd45a5a9e62ee97c3aa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: concreteSlabBlock
+    second: {fileID: 2800000, guid: e017f78bc8f6b7448b4ef692c4bbb03b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: coolerDoors
+    second: {fileID: 2800000, guid: 2c721561290f98045a85af99df891648, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpAB
+    second: {fileID: 2800000, guid: 89aa95f7d1a571647ae182f469fe9718, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpB
+    second: {fileID: 2800000, guid: f2d2b2dca15b63c4eb01e0b6b3775b6c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpC
+    second: {fileID: 2800000, guid: 7b93a52aadad71c43b71e5e40e3b412f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpD
+    second: {fileID: 2800000, guid: 0f551845b5ecbf84bab7ee8b89eee57f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpE
+    second: {fileID: 2800000, guid: b0db4b0ccfdd88c4289ba2ef3d1317f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: fuelPumpF
+    second: {fileID: 2800000, guid: 66d67870a83edfa45a9bcf4c69efd651, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: icedCoffeeA
+    second: {fileID: 2800000, guid: 0c3051581bcdd054abd91047c0fa1224, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: icedCoffeeB
+    second: {fileID: 2800000, guid: dfb7432118a1e1648baf9395eed26e9b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: interiorWalls
+    second: {fileID: 2800000, guid: f253e4bc6508b0b44b3eaf073a58518e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lowResTile
+    second: {fileID: 2800000, guid: 3eecd8129016d8349bf182a53db779ff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: lowResWoodGrain
+    second: {fileID: 2800000, guid: 83d31970c2af220418149dac2265405e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: microwaveA
+    second: {fileID: 2800000, guid: c617e48194833b049b28c4a5c371b016, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: microwaveB
+    second: {fileID: 2800000, guid: 58bd26ea10e7c8e449870ed0d0011f3a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: microwaveC
+    second: {fileID: 2800000, guid: 4c5725d10ee5b8c4999eccddc4ae2dc2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: napkinDispenserA
+    second: {fileID: 2800000, guid: 75258f80483caf84cb9412f9169df6bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: napkinDispenserB
+    second: {fileID: 2800000, guid: 7e8188a9170066545b2a2be34961eb92, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: productA
+    second: {fileID: 2800000, guid: c324ef8d2ddff2d4bbd0ddc752cc60f6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: productB
+    second: {fileID: 2800000, guid: 0b0d124df5177fe4aace4fe735e7506c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: productC
+    second: {fileID: 2800000, guid: 29703fdb91393ae419ae2ab0e8478ad0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: productD
+    second: {fileID: 2800000, guid: cc8b4791e20db7143803302d5608f842, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: productE
+    second: {fileID: 2800000, guid: 535561bb0a35a1a43be71e73d66223c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: productF
+    second: {fileID: 2800000, guid: 0d4d62140350da1498cf1d4d694eab96, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: shingles2
+    second: {fileID: 2800000, guid: 7387db3e5766a9446adf310712f17a1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: slushMachineA
+    second: {fileID: 2800000, guid: c04c4c426d8985f49bb8fce18bfdbb66, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: slushMachineB
+    second: {fileID: 2800000, guid: 0cce78a626c05e94d95aba74c9620ac6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: slushMachineTop
+    second: {fileID: 2800000, guid: 880ec7133c3d50547b2fc184f19fde03, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: smokingDisplayA
+    second: {fileID: 2800000, guid: 7e3131310a69efe4f88c26b896229901, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: smokingDisplayB
+    second: {fileID: 2800000, guid: fda674e76c15b614a8aa55ec69bdb40e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: smokingDisplayC
+    second: {fileID: 2800000, guid: 4546e9f4cf1d43148b790598da21055f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: sodaMachineFinal
+    second: {fileID: 2800000, guid: 9021b3698c515ee438d63ef5ba1a0061, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: strawsA
+    second: {fileID: 2800000, guid: 3a75fc6da45926b46b8313c29cc7d919, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: strawsB
+    second: {fileID: 2800000, guid: ab2f2f3a44b58b542bac0f8fc79b7426, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: utensilsA
+    second: {fileID: 2800000, guid: 6249672634042ce458726310b9254cf5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: utensilsB
+    second: {fileID: 2800000, guid: 640f17551d0098949b2a9b3ae6151d57, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wallSiding2
+    second: {fileID: 2800000, guid: cc97ab316bbf1a2439101045d9a275b2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: windowGlass
+    second: {fileID: 2800000, guid: 084f362bfb894a149a1295e3d4e768f0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: windowMount
+    second: {fileID: 2800000, guid: 1ed283ab87b2dea48b6c13b4881af9de, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
