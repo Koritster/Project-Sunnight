@@ -2669,6 +2669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fades
       objectReference: {fileID: 0}
+    - target: {fileID: 2057744830399825110, guid: ed2a52c51372b7f46b03bf3e6c1d5743, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2762735630512749207, guid: ed2a52c51372b7f46b03bf3e6c1d5743, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
