@@ -80,6 +80,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                m_MouseLook.OpenAndCloseMenu();
+            }
+
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
