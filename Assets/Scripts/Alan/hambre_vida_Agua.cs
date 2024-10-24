@@ -26,7 +26,7 @@ public class hambre_vida_Agua : MonoBehaviour
     public float cantidadDisminucionAgua = 1f;
 
     // Velocidad y cantidad a la que se pierde la vida
-    public float velocidadPerdidaVida = 1f;  
+    public float velocidadPerdidaVida = 1f;
     public float cantidadPerdidaVida = 1f;
 
     float llenoCAV = 100f;
@@ -103,6 +103,18 @@ public class hambre_vida_Agua : MonoBehaviour
             tiempoHambre -= Time.deltaTime * 2f;
             tiempoAgua -= Time.deltaTime * 2f;
         }*/
+    }
+
+    // Método para recibir daño
+    public void RecibirDaño(float daño)
+    {
+        vida -= daño;
+        if (vida <= 0f)
+        {
+            vida = 0f;
+            Debug.Log("Jugador ha muerto");
+        }
+        ActualizarFillAmount(vida_img, vida);
     }
 
     void ActualizarFillAmount(Image img, float valor)

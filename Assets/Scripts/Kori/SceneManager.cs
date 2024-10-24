@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,5 +39,10 @@ public class SceneManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         fades.SetActive(false);
+    }
+
+    internal static void LoadScene(string nombre)
+    {
+        throw new NotImplementedException();
     }
 }
