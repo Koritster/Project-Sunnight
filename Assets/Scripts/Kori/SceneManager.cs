@@ -7,6 +7,7 @@ public class SceneManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject fades;
+    
 
     //Cambiar escena por nombre
     public void ChangeSceneByName(string scene)
