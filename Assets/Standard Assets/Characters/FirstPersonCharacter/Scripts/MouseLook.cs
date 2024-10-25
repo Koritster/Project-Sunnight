@@ -75,7 +75,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (lockCursor)
                 InternalLockUpdate();
         }
-
+        
         private void InternalLockUpdate()
         {
             if(menuIsOpen)
@@ -117,9 +117,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private bool menuIsOpen = false;
 
-        public void OpenAndCloseMenu()
+        public bool OpenAndCloseMenu()
         {
             menuIsOpen = !menuIsOpen;
+            return menuIsOpen;
         }
     }
 }
