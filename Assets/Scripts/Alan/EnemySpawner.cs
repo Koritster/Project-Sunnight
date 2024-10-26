@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -8,10 +7,13 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemiesSpawn;
 
     public float spawnRange;
+    public float timeBetweenSpawn;
+    public float timeBetweenSpawn_2;
+
     void Start()
     {
-        // Invocar la función repetidamente, después de 8 segundos y luego cada 5 segundos
-        InvokeRepeating("SpawnNow", 8, 5);
+        // Invocar la función repetidamente, después de x tiempo
+        InvokeRepeating("SpawnNow", timeBetweenSpawn, timeBetweenSpawn_2);
     }
 
     // Update is called once per frame
