@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 1956182581275855012}
   - component: {fileID: 2844020755482688127}
   - component: {fileID: 4998661125475015888}
+  - component: {fileID: 7994592589599102668}
   m_Layer: 0
   m_Name: Edificio01Nuevo1
   m_TagString: Untagged
@@ -331,3 +332,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14040789, y: 0.0109482, z: 0.11919561}
   m_Center: {x: -0.042037364, y: -0.09989997, z: -0.11442788}
+--- !u!65 &7994592589599102668
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477948581988005532}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.10495521, y: 0.050305, z: 0.10418212}
+  m_Center: {x: -0.04721565, y: 0.08423405, z: -0.106514625}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5847163312311153486}
   - component: {fileID: 2774778434463871327}
   - component: {fileID: 2241751250553869964}
+  - component: {fileID: 7969344045866185595}
   m_Layer: 0
   m_Name: Soporte.001
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7969344045866185595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100265563935359725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.09697027, y: 0.18698394, z: 0.0017863688}
+  m_Center: {x: 1.511772e-11, y: -1.51177e-11, z: -0.000507266}

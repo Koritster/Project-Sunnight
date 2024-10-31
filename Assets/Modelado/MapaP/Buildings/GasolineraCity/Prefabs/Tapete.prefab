@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4280659955722955962}
   - component: {fileID: 4516990483698351706}
   - component: {fileID: 3920302209174151836}
+  - component: {fileID: 6643758676219029736}
   m_Layer: 0
   m_Name: Tapete
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6643758676219029736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7197742990445232150}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0141977435, y: 0.02444926, z: 0.0002301362}
+  m_Center: {x: 2.6979403e-19, y: 2.6970168e-18, z: 0.00009489283}

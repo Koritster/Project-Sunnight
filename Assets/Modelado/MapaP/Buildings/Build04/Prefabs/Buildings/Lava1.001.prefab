@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1153981946142566886}
   - component: {fileID: 568703558418711651}
   - component: {fileID: 45609568167515586}
+  - component: {fileID: 8657941748597000348}
   m_Layer: 0
   m_Name: Lava1.001
   m_TagString: Untagged
@@ -84,3 +85,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8657941748597000348
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8333824147671870853}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.034901977, y: 0.048305314, z: 0.027559053}
+  m_Center: {x: 0.0073398147, y: -0.0013367542, z: 0.0019955072}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7680261278676647423}
   - component: {fileID: 8937196001962865604}
   - component: {fileID: 6773227272762528404}
+  - component: {fileID: 5090686790427887835}
   m_Layer: 0
   m_Name: kitchen_table_001
   m_TagString: Untagged
@@ -84,3 +85,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5090686790427887835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465639302523169590}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.035644133, y: 0.0138700325, z: 0.008532727}
+  m_Center: {x: -0.00092222355, y: -0.00054392545, z: -0.0008822323}

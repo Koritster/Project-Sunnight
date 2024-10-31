@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7937769076181311051}
   - component: {fileID: 6758089746268211390}
   - component: {fileID: 6121480698038693584}
+  - component: {fileID: 6713307699503406489}
   m_Layer: 0
   m_Name: Basura
   m_TagString: Untagged
@@ -84,3 +85,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6713307699503406489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4100933937493416439}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0047586714, y: 0.0045200516, z: 0.007168472}
+  m_Center: {x: 5.193305e-19, y: 5.191528e-18, z: 0.00018266063}

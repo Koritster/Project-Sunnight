@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6031562899057586711}
   - component: {fileID: 384866303022462538}
   - component: {fileID: 9059972608810301631}
+  - component: {fileID: 4899235178102499039}
   m_Layer: 0
   m_Name: "PisoBa\xF1o1.001"
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4899235178102499039
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767749043216659454}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.18110244, y: 0.18897629, z: 0.0000000018626463}
+  m_Center: {x: 0.33070856, y: -0.04330709, z: 0.023622029}

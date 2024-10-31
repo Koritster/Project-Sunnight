@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1167948281747242632}
   - component: {fileID: 1566060760042952281}
   - component: {fileID: 8687935905292740616}
+  - component: {fileID: 5079704126154544986}
   m_Layer: 0
   m_Name: Mesera3
   m_TagString: Untagged
@@ -85,3 +86,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5079704126154544986
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6034513964786465787}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.038582254, y: 0.029259367, z: 0.07664665}
+  m_Center: {x: 0.0003996957, y: -0.005342821, z: 0.0060946206}

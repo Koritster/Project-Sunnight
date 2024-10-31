@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 824897524301157097}
   - component: {fileID: 4510480727470256813}
   - component: {fileID: 7534054149408577334}
+  - component: {fileID: 1606294111904075914}
   m_Layer: 0
   m_Name: Puerta7.001
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1606294111904075914
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5156118233918224934}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.03543308, y: 0.0019685046, z: 0.078740165}
+  m_Center: {x: 0.01771654, y: 0.0009843876, z: 0.039370082}

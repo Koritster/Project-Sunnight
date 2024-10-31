@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 213490641547643593}
   - component: {fileID: 9057530133419207812}
   - component: {fileID: 5862176693047504196}
+  - component: {fileID: 3025475920070317252}
   m_Layer: 0
   m_Name: Sofa01Edif01
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3025475920070317252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3667725056083102338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.07313627, y: 0.03526318, z: 0.028940849}
+  m_Center: {x: -4.3374006e-17, y: 0.001612568, z: 0.014470421}
