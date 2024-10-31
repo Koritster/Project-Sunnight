@@ -36,10 +36,6 @@ public class hambre_vida_Agua : MonoBehaviour
     private float tiempoAgua;
     private float tiempoPerdidaVida;
 
-
-    [SerializeField] private PostProcessVolume volume;
-    [SerializeField] private Vignette vignette;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +50,6 @@ public class hambre_vida_Agua : MonoBehaviour
         hambre_img.fillAmount = 1f;
         agua_img.fillAmount = 1f;
         vida_img.fillAmount = 1f;
-
-        volume.profile.TryGetSettings(out vignette);
     }
 
     void Update()
@@ -64,12 +58,10 @@ public class hambre_vida_Agua : MonoBehaviour
         UpdateHungry();
         UpdateThirst();
 
-        if (hambre == 0f || agua == 0f)
+        if (hambre <= 0f || agua <= 0f)
         {
             UpdateLifePoints();
         }
-
-        UpdatePostProcessing();
     }
 
     #region Public Functions
@@ -84,18 +76,30 @@ public class hambre_vida_Agua : MonoBehaviour
     public void Curar(float lifePoints)
     {
         vida += lifePoints;
+        if (vida > llenoCAV)
+        {
+            vida = llenoCAV;
+        }
         UpdateLifePoints();
     }
 
     public void ChangeHungry(float hungryPoints)
     {
         hambre += hungryPoints;
+        if (hambre > llenoCAV)
+        {
+            hambre = llenoCAV;
+        }
         UpdateHungry();
     }
 
     public void ChangeThirst(float thirstPoints)
     {
         agua += thirstPoints;
+        if(agua > llenoCAV)
+        {
+            agua = llenoCAV;
+        }
         UpdateThirst();
     }
 
@@ -157,39 +161,6 @@ public class hambre_vida_Agua : MonoBehaviour
         }
 
         ActualizarFillAmount(vida_img, vida);
-    }
-
-    private void UpdatePostProcessing()
-    {
-        if (volume == null)
-            return;
-
-        if (vignette == null)
-            return;
-
-        if (hambre < 20f || agua < 20f)
-        {
-
-            // Calcular la intensidad basada en hambre y agua
-            float hambreRatio = hambre;
-            float aguaRatio = agua;
-
-            // Determinar la intensidad máxima si el hambre o agua están bajos
-            float minIntensity = 0.3f;
-            float maxIntensity = 0.8f;
-
-            // Encontrar el valor mínimo entre hambre y agua
-            float minHealth = Mathf.Min(hambreRatio, aguaRatio);
-
-            // Calcular la nueva intensidad entre el máximo de intensidad y el mínimo, a base de la formula 1 - minHealth
-            float newIntensity = Mathf.Lerp(maxIntensity, minIntensity, minHealth * 0.1f);
-
-            vignette.intensity.value = newIntensity;
-        }
-        else
-        {
-            vignette.intensity.value = 0.3f;
-        }
     }
 
     #endregion

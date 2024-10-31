@@ -8,6 +8,8 @@ public class ToolClass : ItemClass
     [Header("Tool Properties")]
     public ToolType toolType;
 
+    public int damagePoints;
+
     public enum ToolType
     {
         weapon,

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cuchillo
   description: "Qui\xE9n sabe cu\xE1ntas muertes lleva consigo."
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 3481e135774436743a8cf3c7ea5d8712, type: 3}
   isStackable: 0
   objectPrefab: {fileID: 1419987693999481022, guid: 5989c9c78d7600244b7c08fb2ae6b748, type: 3}
   toolType: 0
+  damagePoints: 5

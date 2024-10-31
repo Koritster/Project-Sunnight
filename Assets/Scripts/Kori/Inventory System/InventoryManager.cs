@@ -307,6 +307,10 @@ public class InventoryManager : MonoBehaviour
     public void UseSelected()
     {
         items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].SubQuantity(1);
+        if(items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].GetQuantity() <= 0)
+        {
+            items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].Clear();
+        }
         RefreshUI();
     }
 

@@ -7,12 +7,15 @@ public class PlayerController : MonoBehaviour
 {
     public InventoryManager inventory;
 
+    [SerializeField] private GameObject cs_InGame;
     [SerializeField] private GameObject cs_Inventory;
     [SerializeField] private GameObject cs_InformationPanel;
     [SerializeField] private GameObject cs_Crafting;
     [SerializeField] private GameObject cs_Chest;
+    [SerializeField] private GameObject cs_Pause;
 
     private bool isInventoryOpen;
+    [SerializeField]
     private FirstPersonController fpsController;
 
     [SerializeField] private float raycastLength;
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
         {
             OpenMenu();
             cs_Inventory.SetActive(true);
-            //cs_InformationPanel.SetActive(true)
+            cs_InformationPanel.SetActive(true);
         }
         //Abrir crafteo
         else if (Input.GetKeyDown(KeyCode.C))
@@ -89,7 +92,7 @@ public class PlayerController : MonoBehaviour
     private void CloseAllCanvas()
     {
         cs_Inventory.SetActive(false);
-        //cs_InformationPanel.SetActive(false);
+        cs_InformationPanel.SetActive(false);
         //cs_Crafting.SetActive(false);
         //cs_Chest.SetActive(false);
     }

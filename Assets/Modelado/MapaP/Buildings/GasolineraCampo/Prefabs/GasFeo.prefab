@@ -1,5 +1,58 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &725919450925322230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5171368165962842528}
+  - component: {fileID: 2818174040351122047}
+  m_Layer: 0
+  m_Name: Subida
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5171368165962842528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725919450925322230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.53729963, y: 0, z: 0, w: 0.8433914}
+  m_LocalPosition: {x: -3.693, y: -1.959, z: 7.967}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4276182107907946891}
+  m_LocalEulerAnglesHint: {x: -65, y: 0, z: 0}
+--- !u!65 &2818174040351122047
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725919450925322230}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3, y: 1.45, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1265455005255697495
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,6 +77,7 @@ GameObject:
   - component: {fileID: 7407459936555613790}
   - component: {fileID: 5351958827441086098}
   - component: {fileID: 9211675290165047464}
+  - component: {fileID: 1123345630214066540}
   m_Layer: 0
   m_Name: GasFeo
   m_TagString: Untagged
@@ -43,7 +97,8 @@ Transform:
   m_LocalPosition: {x: 103.88596, y: 6.253107, z: 754.6201}
   m_LocalScale: {x: 2.5536413, y: 3.593229, z: 2.5536413}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5171368165962842528}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9169104779609355451
@@ -414,3 +469,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7062137, y: 3.5416906, z: 9.693187}
   m_Center: {x: -7.32981, y: 0.15854456, z: 2.773174}
+--- !u!65 &1123345630214066540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265455005255697495}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 30.991432, y: 0.35441566, z: 18.270622}
+  m_Center: {x: 3.2304199, y: -1.4350921, z: -1.5560527}

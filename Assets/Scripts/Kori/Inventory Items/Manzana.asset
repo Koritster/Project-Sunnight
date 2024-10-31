@@ -14,21 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Manzana
   description: Una rica, gorda y jugosa manzana.
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: fa01c8a7c4f062541be8e0d4b7a6691f, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 4535152020436160410, guid: b419021ee1a13604abf8b102622c1600, type: 3}
-  customEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  lifePoints: 0
+  hungryPoints: 20
+  thristPoints: 5
