@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Alan Scene/AlanCopy Map Alpha 0.2.unity
+    guid: 19ee1cfc67a3bc9429de20a0591a6e66
   - enabled: 0
     path: Assets/Scenes/Ney Scenes/Ney Test Scene2.unity
     guid: 3ae97d26b96d6d44ab0aac91ad07e012
