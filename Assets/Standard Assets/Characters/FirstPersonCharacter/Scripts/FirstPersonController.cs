@@ -80,14 +80,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                m_MouseLook.OpenAndCloseMenu();
-            }
-
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
-
 
         private void PlayLandingSound()
         {
@@ -96,9 +90,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + .5f;
         }
 
-
         private void FixedUpdate()
         {
+            m_MouseLook.UpdateCursorLock();
+
+            if (isMenuOpen)
+            {
+                return;
+            }
+
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -134,8 +134,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
-
-            m_MouseLook.UpdateCursorLock();
         }
 
 
@@ -259,6 +257,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        private bool isMenuOpen;
+
+        public void OpenAndClose()
+        {
+            isMenuOpen = m_MouseLook.OpenAndCloseMenu();
         }
     }
 }

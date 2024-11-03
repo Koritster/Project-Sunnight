@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7079718839962200033}
   - component: {fileID: 5863950435052202377}
   - component: {fileID: 5070312043280765877}
+  - component: {fileID: 6138203651960664029}
   m_Layer: 0
   m_Name: Estante4.001
   m_TagString: Untagged
@@ -84,3 +85,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6138203651960664029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3580570950466271359}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.27160573, y: 3.2413332, z: 0.7610847}
+  m_Center: {x: -0.0010188445, y: 0.034144994, z: 0.032125548}
