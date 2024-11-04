@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5bcb0706456bb64f8c05992150f3a7a, type: 3}
+  m_Name: FoodChest1
+  m_EditorClassIdentifier: 
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 29106aa626cc73e40a070aa1a1236f30, type: 2}
+    probabilities: {x: -5, y: 5}
+    quantity: 0
+  - item: {fileID: 11400000, guid: b65111685de622243a49f005339592d6, type: 2}
+    probabilities: {x: -2, y: 3}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 29106aa626cc73e40a070aa1a1236f30, type: 2}
+    probabilities: {x: 1, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: f30f1c6102574804fa6e4c4088196828, type: 2}
+    probabilities: {x: -8, y: 1}
+    quantity: 0
