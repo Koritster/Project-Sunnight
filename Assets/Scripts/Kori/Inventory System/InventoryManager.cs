@@ -292,7 +292,9 @@ public class InventoryManager : MonoBehaviour
                         Transform trsm_HandAttachment = handAttachment.transform;
                         Transform trsm_tempObj = tempObj.objectPrefab.transform;
                         Debug.Log("Agregar objeto a la lista");
-                        itemPrefabs[i - (slots.Length - hotbarSlots.Length)] = Instantiate(tempObj.objectPrefab, new Vector3(trsm_HandAttachment.position.x + trsm_tempObj.position.x, trsm_HandAttachment.position.y + trsm_tempObj.position.y, trsm_HandAttachment.position.z + trsm_tempObj.position.z), Quaternion.Euler(trsm_tempObj.eulerAngles), handAttachment.transform);
+                        Debug.Log(new Vector3(trsm_tempObj.localPosition.x, trsm_tempObj.localPosition.y, trsm_tempObj.localPosition.z));
+                        itemPrefabs[i - (slots.Length - hotbarSlots.Length)] = Instantiate(tempObj.objectPrefab, new Vector3(0f, 0f, 0f), Quaternion.Euler(trsm_tempObj.eulerAngles), handAttachment.transform);
+                        itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localPosition = new Vector3(trsm_tempObj.localPosition.x, trsm_tempObj.localPosition.y, trsm_tempObj.localPosition.z);
                     }
                 }
             }
