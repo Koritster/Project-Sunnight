@@ -53,6 +53,21 @@ public class InventoryManager : MonoBehaviour
 
     #endregion
 
+    #region Information Panel Variables
+
+    [Space(5)]
+    [Header("Information Panel Variables")]
+    [Space(5)]
+    [SerializeField] private Image itemIconHolder;
+    [SerializeField] private Text txt_ItemName;
+    [SerializeField] private Text txt_Description;
+
+    //0 - 2 Life, Hungry and Thrist
+    [SerializeField] private Image[] img_Stats;
+    [SerializeField] private Text[] txt_Stats;
+
+    #endregion
+
     private void Start()
     {
         slots = new GameObject[slotHolder.transform.childCount];
@@ -105,6 +120,7 @@ public class InventoryManager : MonoBehaviour
             BeginItemMove();
             EndItemMove();
         }
+
         //Agarrar la mitad de objetos / Soltar un solo objeto
         else if (Input.GetMouseButtonDown(1))
         {
@@ -129,7 +145,7 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
-                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, hotbarSlots.Length - 1);
+                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, 0, hotbarSlots.Length - 1);
             }
 
             DesactivateHotbarPrefabs();
@@ -142,7 +158,7 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
-                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, 0, hotbarSlots.Length - 1);
+                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, hotbarSlots.Length - 1);
             }
 
             DesactivateHotbarPrefabs();
@@ -156,6 +172,11 @@ public class InventoryManager : MonoBehaviour
         {
             itemPrefabs[selectedSlotIndex].SetActive(true);
         }
+
+
+        //Seccion - Information Panel
+
+
     }
 
     #region Inventory Utils
