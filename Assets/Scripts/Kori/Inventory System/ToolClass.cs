@@ -14,9 +14,10 @@ public class ToolClass : ItemClass
 
     public enum ToolType
     {
-        weapon,
+        meleeWeapon,
         pickaxe,
-        axe
+        axe,
+        fireWeapon
     }
 
     public override void Use(PlayerController caller)

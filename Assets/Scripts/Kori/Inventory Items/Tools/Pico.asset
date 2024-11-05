@@ -17,6 +17,6 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: d2b8c61885e9ced49b8a7e545d543edc, type: 3}
   isStackable: 0
   objectPrefab: {fileID: 8781431008969835723, guid: fc00b231240b7db4bac754ed468541e8, type: 3}
-  toolType: 0
+  toolType: 1
   damagePoints: 2
   toolSprite: {fileID: 21300000, guid: 6a7588c47c32f8045af7cfa5ff9ed22d, type: 3}
