@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IAttackable
 {
-    public void Hurt(ToolClass tool);
+    public void Hurt(ToolClass tool, int damagePoints);
 }

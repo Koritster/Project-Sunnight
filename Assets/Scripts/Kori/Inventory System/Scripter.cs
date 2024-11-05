@@ -52,5 +52,16 @@ public class Scripter : MonoBehaviour
         statsSystem.ChangeThirst(thristPoints);
     }
 
+    public void Attack(IAttackable obj, ToolClass tool, int damagePoints)
+    {
+        StartCoroutine(AttackCoroutine(obj, tool, damagePoints));
+    }
+
+    IEnumerator AttackCoroutine(IAttackable obj, ToolClass tool, int damagePoints)
+    {
+        yield return new WaitForSeconds(1f);
+        obj.Hurt(tool, damagePoints);
+    }
+
     #endregion
 }

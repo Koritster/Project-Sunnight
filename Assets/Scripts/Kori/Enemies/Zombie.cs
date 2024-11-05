@@ -6,9 +6,9 @@ public class Zombie : MonoBehaviour, IAttackable
 {
     AttackableObject typeOfObject;
 
-    public void Hurt(ToolClass tool)
+    public void Hurt(ToolClass tool, int damagePoints)
     {
-        
+        //Debug.Log();
     }
 
     // Start is called before the first frame update

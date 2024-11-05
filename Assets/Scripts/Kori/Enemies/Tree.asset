@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Tree
   m_EditorClassIdentifier: 
   objectName: Tree
+  toolType: 4
   soundEffect: {fileID: 0}
   lifePoints: 50
