@@ -10,6 +10,8 @@ public class ToolClass : ItemClass
 
     public int damagePoints;
 
+    public Sprite toolSprite;
+
     public enum ToolType
     {
         weapon,

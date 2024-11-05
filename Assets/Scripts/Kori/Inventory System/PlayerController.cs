@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
             OpenMenu();
             cs_Inventory.SetActive(true);
             cs_InformationPanel.SetActive(true);
+            cs_InGame.SetActive(false);
         }
         //Abrir crafteo
         else if (Input.GetKeyDown(KeyCode.C))
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
             OpenMenu();
             cs_Inventory.SetActive(true);
             //cs_Crafting.SetActive(true);
+            cs_InGame.SetActive(false);
         }
         //Abrir cofre
         else if (Input.GetKeyDown(KeyCode.F))
@@ -50,13 +52,14 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(ray, out hit, raycastLength))
             {
                 Chest chest = hit.collider.gameObject.GetComponent<Chest>();
-                if(chest != null)
+                if (chest != null)
                 {
                     Debug.Log("Se abrió un cofre");
                     chest.InstanceObjects();
-                    OpenMenu(); 
+                    OpenMenu();
                     cs_Inventory.SetActive(true);
                     cs_Chest.SetActive(true);
+                    cs_InGame.SetActive(false);
                 }
             }
             else
@@ -91,8 +94,10 @@ public class PlayerController : MonoBehaviour
 
     private void CloseAllCanvas()
     {
+        cs_InGame.SetActive(true);
         cs_Inventory.SetActive(false);
         cs_InformationPanel.SetActive(false);
+        cs_Pause.SetActive(false);
         //cs_Crafting.SetActive(false);
         //cs_Chest.SetActive(false);
     }

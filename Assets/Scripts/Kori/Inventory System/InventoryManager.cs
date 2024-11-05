@@ -37,7 +37,8 @@ public class InventoryManager : MonoBehaviour
     #endregion
 
     #region Hotbar Variables
-
+    
+    [Space(5)]
     [Header("Hotbar section")]
     [Space(5)]
     [Tooltip("Imagen que indica el objeto seleccionado en la hotbar")]
@@ -62,9 +63,11 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Text txt_ItemName;
     [SerializeField] private Text txt_Description;
 
-    //0 - 2 Life, Hungry and Thrist
+    //0 - 2 Life, Hungry and Thrist, 3 Tools
     [SerializeField] private Image[] img_Stats;
     [SerializeField] private Text[] txt_Stats;
+
+    private ItemClass hoverItem;
 
     #endregion
 
@@ -137,7 +140,7 @@ public class InventoryManager : MonoBehaviour
 
         //General
         //Movimiento dentro de la hotbar
-        if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        if(Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             if(selectedSlotIndex == hotbarSlots.Length - 1)
             {
@@ -145,12 +148,12 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
-                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, 0, hotbarSlots.Length - 1);
+                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, hotbarSlots.Length - 1);
             }
 
             DesactivateHotbarPrefabs();
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             if (selectedSlotIndex == 0)
             {
@@ -158,7 +161,7 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
-                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex + 1, 0, hotbarSlots.Length - 1);
+                selectedSlotIndex = Mathf.Clamp(selectedSlotIndex - 1, 0, hotbarSlots.Length - 1);
             }
 
             DesactivateHotbarPrefabs();
@@ -176,7 +179,70 @@ public class InventoryManager : MonoBehaviour
 
         //Seccion - Information Panel
 
+        SlotClass hoverSlot = GetClossestSlot();
+        if(hoverSlot != null)
+        {
+            //Si son lo mismo, no hacer nada
+            if (hoverSlot.GetItem() == hoverItem)
+                return;
 
+            hoverItem = hoverSlot.GetItem();
+
+            //Si está vacio hoverItem, no hacer nada
+            if(hoverItem == null)
+                return;
+
+            itemIconHolder.gameObject.SetActive(true);
+            txt_ItemName.gameObject.SetActive(true);
+            txt_Description.gameObject.SetActive(true);
+
+            itemIconHolder.sprite = hoverItem.itemIcon;
+            txt_ItemName.text = hoverItem.itemName;
+            txt_Description .text = hoverItem.description;
+
+            //Si es un item consumible
+            if (hoverItem.GetConsumable() != null)
+            {
+                ConsumableClass tempCons = hoverItem.GetConsumable();
+
+                for (int i = 0; i <= 2; i++)
+                {
+                    img_Stats[i].gameObject.SetActive(true);
+                    txt_Stats[i].gameObject.SetActive(true);
+                }
+
+                txt_Stats[0].text = tempCons.lifePoints + "";
+                txt_Stats[1].text = tempCons.hungryPoints + "";
+                txt_Stats[2].text = tempCons.thristPoints + "";
+            }
+
+            //Si es una herramienta
+            else if (hoverItem.GetTool())
+            {
+                ToolClass tempTool = hoverItem.GetTool();
+
+                img_Stats[3].gameObject.SetActive(true);
+                txt_Stats[3].gameObject.SetActive(true);
+
+                img_Stats[3].sprite = tempTool.toolSprite;
+                txt_Stats[3].text = tempTool.damagePoints + "";
+            }
+        }
+        //Si no se esta agarrando nada, convertir hoverItem a null
+        else if(hoverItem != null)
+        {
+            hoverItem = null;
+
+            itemIconHolder.gameObject.SetActive(false);
+            txt_ItemName.gameObject.SetActive(false);
+            txt_Description.gameObject.SetActive(false);
+
+            for (int i = 0; i < txt_Stats.Length; i++)
+            {
+                img_Stats[i].gameObject.SetActive(false);
+                txt_Stats[i].gameObject.SetActive(false);
+            }
+        }
     }
 
     #region Inventory Utils
@@ -483,7 +549,7 @@ public class InventoryManager : MonoBehaviour
     {
         for(int i = 0; i < slots.Length;i++ )
         {
-            if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 32)
+            if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 64)
             {
                 return items[i];
             }
