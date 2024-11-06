@@ -27,7 +27,7 @@ public class ToolClass : ItemClass
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
 
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 7))
+        if (Physics.Raycast(ray, out hit, 4))
         {
             if(hit.collider.TryGetComponent<IAttackable>(out IAttackable obj))
             {

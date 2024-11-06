@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5685901765300462823
+--- !u!1 &5624906026339074483
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5961170930904724988}
-  - component: {fileID: 5232145500425085556}
-  - component: {fileID: 3300337539512526076}
+  - component: {fileID: 6277042731107918110}
+  - component: {fileID: 6984989764666906137}
+  - component: {fileID: 7048917392906137200}
+  - component: {fileID: 5107390461259494518}
   m_Layer: 0
   m_Name: Scripter
   m_TagString: Untagged
@@ -18,13 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5961170930904724988
+--- !u!4 &6277042731107918110
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5685901765300462823}
+  m_GameObject: {fileID: 5624906026339074483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.549481, y: 1.1521692, z: -8.3208}
@@ -33,13 +34,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5232145500425085556
+--- !u!114 &6984989764666906137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5685901765300462823}
+  m_GameObject: {fileID: 5624906026339074483}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e041032df0d8145479cdd03b25ba5189, type: 3}
@@ -50,19 +51,44 @@ MonoBehaviour:
   hotbarSlotHolder: {fileID: 0}
   itemToAdd: {fileID: 0}
   itemToRemove: {fileID: 0}
-  startingItems: []
+  startingItems:
+  - item: {fileID: 11400000, guid: 377290f71c8957e4d80856863435dfe3, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: b65111685de622243a49f005339592d6, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: d8e411a8984f0b14394a514c4c98cd81, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: f30f1c6102574804fa6e4c4088196828, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 29106aa626cc73e40a070aa1a1236f30, type: 2}
+    quantity: 1
+  - item: {fileID: 11400000, guid: 8384253aa85b0ad4d91b37f92f5bdb56, type: 2}
+    quantity: 1
   hotbarSelector: {fileID: 0}
   selectedSlotIndex: 0
   selectedItem: {fileID: 0}
   handAttachment: {fileID: 0}
   itemPrefabs: []
---- !u!114 &3300337539512526076
+  itemIconHolder: {fileID: 0}
+  txt_ItemName: {fileID: 0}
+  txt_Description: {fileID: 0}
+  img_Stats:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  txt_Stats:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &7048917392906137200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5685901765300462823}
+  m_GameObject: {fileID: 5624906026339074483}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22e7a6e45ebe04d409924e31d9497c2f, type: 3}
@@ -70,7 +96,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestSlotsHolder: {fileID: 0}
   scrollBar: {fileID: 0}
-  chestSlotPrefab: {fileID: 6900053394671214787, guid: a35de1394e7d94a479bef4af463e5744, type: 3}
-  inventory: {fileID: 5232145500425085556}
+  chestSlotPrefab: {fileID: 0}
+  inventory: {fileID: 6984989764666906137}
   player: {fileID: 0}
   statsSystem: {fileID: 0}
+  inAction: 0
+--- !u!114 &5107390461259494518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624906026339074483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976e3ce471963fb40b0d3d31028ba83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fades: {fileID: 0}

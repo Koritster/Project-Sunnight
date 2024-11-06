@@ -15,6 +15,12 @@ public class SceneManager : MonoBehaviour
         StartCoroutine(FadeToChanceScene(scene));
     }
 
+    //Cambiar escena por ID
+    public void ChangeSceneByID(int scene)
+    {
+        StartCoroutine(FadeToChanceScene(scene));
+    }
+
     //Salir del juego
     public void Exit()
     {
@@ -35,14 +41,17 @@ public class SceneManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 
+    IEnumerator FadeToChanceScene(int scene)
+    {
+        fades.SetActive(true);
+        fades.GetComponent<Animator>().Play("Fade out");
+        yield return new WaitForSeconds(1.0f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+    }
+
     IEnumerator FadeInStart()
     {
         yield return new WaitForSeconds(1.0f);
         fades.SetActive(false);
-    }
-
-    internal static void LoadScene(string nombre)
-    {
-        throw new NotImplementedException();
     }
 }

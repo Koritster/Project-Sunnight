@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject cs_Pause;
 
     private bool isInventoryOpen;
+    private bool isPause;
+
     [SerializeField]
     private FirstPersonController fpsController;
 
@@ -27,6 +29,36 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Pausar
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (isInventoryOpen) 
+            {
+                Debug.Log("Cerrar inv");
+                Pause();
+            }
+            else if (!isPause)
+            {
+                Debug.Log("Pausar");
+                Pause();
+                cs_Pause.SetActive(true);
+                cs_InGame.SetActive(false);
+                isPause = true;
+                Scripter.scripter.Pause();
+            }
+            else
+            {
+                Debug.Log("Despausar");
+                Continue();
+            }
+
+        }
+
+        if (isPause)
+        {
+            return;
+        }
+
         //Abrir inventario
         if (Input.GetKeyDown(KeyCode.I))
         {
@@ -43,7 +75,7 @@ public class PlayerController : MonoBehaviour
             //cs_Crafting.SetActive(true);
             cs_InGame.SetActive(false);
         }
-        //Abrir cofre
+        //Abrir cofre o agarrar objetos
         else if (Input.GetKeyDown(KeyCode.F))
         {
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -79,6 +111,7 @@ public class PlayerController : MonoBehaviour
                 inventory.selectedItem.Use(this);
             }
         }
+        
         //Cerrar todo
         if (!isInventoryOpen)
         {
@@ -86,9 +119,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Continue()
+    {
+        OpenMenu();
+        isPause = false;
+    }
+
     private void OpenMenu()
     {
         isInventoryOpen = inventory.OpenAndCloseInventory();
+        fpsController.OpenAndClose();
+    }
+
+    private void Pause()
+    {
+        isPause = inventory.OpenAndCloseInventory();
         fpsController.OpenAndClose();
     }
 

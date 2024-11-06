@@ -295,6 +295,7 @@ public class InventoryManager : MonoBehaviour
                         Debug.Log(new Vector3(trsm_tempObj.localPosition.x, trsm_tempObj.localPosition.y, trsm_tempObj.localPosition.z));
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)] = Instantiate(tempObj.objectPrefab, new Vector3(0f, 0f, 0f), Quaternion.Euler(trsm_tempObj.eulerAngles), handAttachment.transform);
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localPosition = new Vector3(trsm_tempObj.localPosition.x, trsm_tempObj.localPosition.y, trsm_tempObj.localPosition.z);
+                        itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localRotation = Quaternion.Euler(trsm_tempObj.eulerAngles);
                     }
                 }
             }

@@ -19,6 +19,7 @@ public class Scripter : MonoBehaviour
     [Header("Player Attributes")]
     public GameObject player;
     public hambre_vida_Agua statsSystem;
+    public bool inAction;
 
     void Awake()
     {
@@ -54,13 +55,30 @@ public class Scripter : MonoBehaviour
 
     public void Attack(IAttackable obj, ToolClass tool, int damagePoints)
     {
-        StartCoroutine(AttackCoroutine(obj, tool, damagePoints));
+        if (!inAction)
+        {
+            player.GetComponent<Animator>().SetTrigger("UseTool");
+            StartCoroutine(AttackCoroutine(obj, tool, damagePoints));
+        }
     }
 
     IEnumerator AttackCoroutine(IAttackable obj, ToolClass tool, int damagePoints)
     {
-        yield return new WaitForSeconds(1f);
+        inAction = true;
+        yield return new WaitForSeconds(0.5f);
         obj.Hurt(tool, damagePoints);
+        yield return new WaitForSeconds(0.5f);
+        inAction = false;
+    }
+
+    #endregion
+
+    #region Global Functions
+
+    public void Pause()
+    {
+        //Freeze enemies
+        //Freeze stats system
     }
 
     #endregion
