@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
         cs_InformationPanel.SetActive(false);
         cs_Pause.SetActive(false);
         //cs_Crafting.SetActive(false);
-        //cs_Chest.SetActive(false);
+        cs_Chest.SetActive(false);
     }
 
     private void OnDrawGizmos()
