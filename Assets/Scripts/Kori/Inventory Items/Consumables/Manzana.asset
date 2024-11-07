@@ -17,7 +17,7 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: fa01c8a7c4f062541be8e0d4b7a6691f, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 4535152020436160410, guid: b419021ee1a13604abf8b102622c1600, type: 3}
-  objectPrefabPickable: {fileID: 3221495136976193992, guid: 785c1a463f21ea047b55d8ec5035a82d, type: 3}
+  objectPrefabPickable: {fileID: 4994065464543878795, guid: 7824b6b3bf0ccde4f8fc50f2ae09c922, type: 3}
   lifePoints: 0
   hungryPoints: 20
   thristPoints: 5
