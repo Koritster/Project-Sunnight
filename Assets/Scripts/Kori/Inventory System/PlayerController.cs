@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Pausar
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isInventoryOpen) 
             {

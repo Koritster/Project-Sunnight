@@ -1,10 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.AssemblyQualifiedNameParser;
 using UnityEngine;
-using static AttackableObjectReference;
-using static UnityEditor.Progress;
-using static UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing;
 
 [RequireComponent(typeof(AudioSource))]
 public class AttackableObject : MonoBehaviour, IAttackable
