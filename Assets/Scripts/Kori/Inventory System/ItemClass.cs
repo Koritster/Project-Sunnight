@@ -11,6 +11,7 @@ public class ItemClass : ScriptableObject
     public Sprite itemIcon;
     public bool isStackable = true;
     public GameObject objectPrefab;
+    public GameObject objectPrefabPickable;
 
     public virtual void Use(PlayerController caller)
     {

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AttackableObjectReference;
+using static UnityEditor.Progress;
+using static UnityEngine.Rendering.PostProcessing.SubpixelMorphologicalAntialiasing;
 
 [RequireComponent(typeof(AudioSource))]
 public class AttackableObject : MonoBehaviour, IAttackable
@@ -65,8 +68,24 @@ public class AttackableObject : MonoBehaviour, IAttackable
         {
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider>().enabled = false;
+            DropItems();
             yield return new WaitForSeconds(1f);
             gameObject.SetActive(false);
+        }
+    }
+
+    private void DropItems()
+    {
+        Renderer render = gameObject.GetComponent<Renderer>();
+        for(int i = 0; i < obj.dropItems.Length; i++)
+        {
+            obj.dropItems[i].quantity = Random.Range((int)obj.dropItems[i].probabilities.x, (int)obj.dropItems[i].probabilities.y + 1);
+            for (int j = 0; j < obj.dropItems[i].quantity; j++)
+            {
+                GameObject itemPickable = Instantiate(obj.dropItems[i].item.objectPrefabPickable, Vector3.zero, Quaternion.identity, gameObject.transform);
+                itemPickable.transform.localPosition = new Vector3(Random.Range(-1f, 1f), render.bounds.size.y/4, Random.Range(-1f, 1f));
+                itemPickable.transform.parent = null;
+            }
         }
     }
 }

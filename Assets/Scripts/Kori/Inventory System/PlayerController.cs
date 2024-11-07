@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, raycastLength))
             {
+                //Abrir cofre
                 Chest chest = hit.collider.gameObject.GetComponent<Chest>();
                 if (chest != null)
                 {
@@ -92,6 +93,10 @@ public class PlayerController : MonoBehaviour
                     cs_Inventory.SetActive(true);
                     cs_Chest.SetActive(true);
                     cs_InGame.SetActive(false);
+                }
+                else if(hit.collider.gameObject.TryGetComponent<IPickable>(out IPickable obj))
+                {
+                    obj.PickItem();
                 }
             }
             else

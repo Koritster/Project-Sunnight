@@ -20,4 +20,16 @@ public class AttackableObjectReference : ScriptableObject
         axe,
         pickaxe
     }
+    
+    [System.Serializable]
+    public class DropItems
+    {
+        public ItemClass item;
+        public Vector2 probabilities;
+        public int quantity;
+    }
+
+    [Header("Drops")]
+    [Space(5)]
+    public DropItems[] dropItems;
 }

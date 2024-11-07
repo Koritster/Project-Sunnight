@@ -16,3 +16,7 @@ MonoBehaviour:
   toolType: 4
   soundEffect: {fileID: 8300000, guid: 9caf04e7afab2024eac12389d5d446e5, type: 3}
   lifePoints: 72
+  dropItems:
+  - item: {fileID: 11400000, guid: 29106aa626cc73e40a070aa1a1236f30, type: 2}
+    probabilities: {x: 1, y: 2}
+    quantity: 1
