@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
     [Space(5)]
     [Tooltip("Imagen que se mostrará al agarrar un objeto")]
     [SerializeField] private GameObject itemCursor;
-    
+
     [Tooltip("Objeto que contiene todos los slots")]
     [SerializeField] private GameObject slotHolder;
     [Tooltip("Objeto que contiene los slots de la hotbar")]
@@ -37,7 +37,7 @@ public class InventoryManager : MonoBehaviour
     #endregion
 
     #region Hotbar Variables
-    
+
     [Space(5)]
     [Header("Hotbar section")]
     [Space(5)]
@@ -68,6 +68,15 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private Text[] txt_Stats;
 
     private ItemClass hoverItem;
+
+    #endregion
+
+    #region Crafting Variables
+
+    [Space(5)]
+    [Header("Crafting Variables")]
+    [Space(5)]
+    [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
 
     #endregion
 
@@ -140,9 +149,9 @@ public class InventoryManager : MonoBehaviour
 
         //General
         //Movimiento dentro de la hotbar
-        if(Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if(selectedSlotIndex == hotbarSlots.Length - 1)
+            if (selectedSlotIndex == hotbarSlots.Length - 1)
             {
                 selectedSlotIndex = 0;
             }
@@ -171,7 +180,7 @@ public class InventoryManager : MonoBehaviour
         hotbarSelector.transform.position = hotbarSlots[selectedSlotIndex].transform.position;
         selectedItem = items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].GetItem();
 
-        if(selectedItem != null && itemPrefabs[selectedSlotIndex] != null && !itemPrefabs[selectedSlotIndex].activeSelf)
+        if (selectedItem != null && itemPrefabs[selectedSlotIndex] != null && !itemPrefabs[selectedSlotIndex].activeSelf)
         {
             itemPrefabs[selectedSlotIndex].SetActive(true);
         }
@@ -180,7 +189,7 @@ public class InventoryManager : MonoBehaviour
         //Seccion - Information Panel
 
         SlotClass hoverSlot = GetClossestSlot();
-        if(hoverSlot != null)
+        if (hoverSlot != null)
         {
             //Si son lo mismo, no hacer nada
             if (hoverSlot.GetItem() == hoverItem)
@@ -189,7 +198,7 @@ public class InventoryManager : MonoBehaviour
             hoverItem = hoverSlot.GetItem();
 
             //Si está vacio hoverItem, no hacer nada
-            if(hoverItem == null)
+            if (hoverItem == null)
                 return;
 
             itemIconHolder.gameObject.SetActive(true);
@@ -198,7 +207,7 @@ public class InventoryManager : MonoBehaviour
 
             itemIconHolder.sprite = hoverItem.itemIcon;
             txt_ItemName.text = hoverItem.itemName;
-            txt_Description .text = hoverItem.description;
+            txt_Description.text = hoverItem.description;
 
             //Si es un item consumible
             if (hoverItem.GetConsumable() != null)
@@ -229,7 +238,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
         //Si no se esta agarrando nada, convertir hoverItem a null
-        else if(hoverItem != null)
+        else if (hoverItem != null)
         {
             hoverItem = null;
 
@@ -287,7 +296,7 @@ public class InventoryManager : MonoBehaviour
                 ItemClass tempObj = items[((slots.Length - hotbarSlots.Length) + (i - (slots.Length - hotbarSlots.Length)))].GetItem();
                 if (tempObj != null)
                 {
-                    if(itemPrefabs[i - (slots.Length - hotbarSlots.Length)] == null)
+                    if (itemPrefabs[i - (slots.Length - hotbarSlots.Length)] == null)
                     {
                         Transform trsm_HandAttachment = handAttachment.transform;
                         Transform trsm_tempObj = tempObj.objectPrefab.transform;
@@ -297,7 +306,7 @@ public class InventoryManager : MonoBehaviour
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localRotation = Quaternion.Euler(trsm_tempObj.eulerAngles);
                     }
                     //Reemplazar items
-                    else if(itemPrefabs[i - (slots.Length - hotbarSlots.Length)] != tempObj)
+                    else if (itemPrefabs[i - (slots.Length - hotbarSlots.Length)] != tempObj)
                     {
                         Debug.Log("Quitar objeto de la lista");
                         Destroy(itemPrefabs[i - (slots.Length - hotbarSlots.Length)]);
@@ -333,7 +342,7 @@ public class InventoryManager : MonoBehaviour
 
     private void DesactivateHotbarPrefabs()
     {
-        for(int i = 0; i < hotbarSlots.Length; i++)
+        for (int i = 0; i < hotbarSlots.Length; i++)
         {
             if (itemPrefabs[i] != null)
             {
@@ -407,10 +416,47 @@ public class InventoryManager : MonoBehaviour
         return true;
     }
 
+    public bool Remove(ItemClass item, int quantity)
+    {
+        if (item == null)
+            return false;
+
+        SlotClass temp = Contains(item);
+        if (temp != null)
+        {
+            if (temp.GetQuantity() > quantity)
+            {
+                temp.SubQuantity(quantity);
+            }
+            else
+            {
+                int indexSlotToRemove = 0;
+
+                for (int i = 0; i < items.Length; i++)
+                {
+                    if (items[i].GetItem() == item)
+                    {
+                        indexSlotToRemove = i;
+                        break;
+                    }
+                }
+
+                items[indexSlotToRemove].Clear();
+            }
+        }
+        else
+        {
+            return false;
+        }
+
+        RefreshUI();
+        return true;
+    }
+
     public void UseSelected()
     {
         items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].SubQuantity(1);
-        if(items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].GetQuantity() <= 0)
+        if (items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].GetQuantity() <= 0)
         {
             items[selectedSlotIndex + (slots.Length - hotbarSlots.Length)].Clear();
         }
@@ -431,13 +477,26 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
 
+    public bool Contains(ItemClass item, int quantity)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i].GetItem() == item && items[i].GetQuantity() >= quantity)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     #endregion
 
     #region Moving Stuff
 
     private bool BeginItemMove()
     {
-        if(isMovingItem)
+        if (isMovingItem)
         {
             return false;
         }
@@ -469,7 +528,7 @@ public class InventoryManager : MonoBehaviour
             return false;
 
         movingSlot = new SlotClass(originalSlot.GetItem(), Mathf.FloorToInt(originalSlot.GetQuantity() / 2f));
-        originalSlot.SubQuantity(Mathf.FloorToInt(originalSlot.GetQuantity() / 2f)); 
+        originalSlot.SubQuantity(Mathf.FloorToInt(originalSlot.GetQuantity() / 2f));
         if (originalSlot.GetQuantity() < 1)
         {
             originalSlot.Clear();
@@ -488,17 +547,17 @@ public class InventoryManager : MonoBehaviour
         }
 
         originalSlot = GetClossestSlot();
-        
-        if(originalSlot == null) 
+
+        if (originalSlot == null)
         {
             Add(movingSlot.GetItem(), movingSlot.GetQuantity());
             movingSlot.Clear();
         }
         else
         {
-            if(originalSlot.GetItem() != null)
+            if (originalSlot.GetItem() != null)
             {
-                if(originalSlot.GetItem() == movingSlot.GetItem()) //Stackear objetos al ser del mismmo tipo
+                if (originalSlot.GetItem() == movingSlot.GetItem()) //Stackear objetos al ser del mismmo tipo
                 {
                     originalSlot.AddQuantity(movingSlot.GetQuantity());
                     movingSlot.Clear();
@@ -537,7 +596,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         movingSlot.SubQuantity(1);
-        if(originalSlot.GetItem() != null && originalSlot.GetItem() == movingSlot.GetItem())
+        if (originalSlot.GetItem() != null && originalSlot.GetItem() == movingSlot.GetItem())
         {
             originalSlot.AddQuantity(1);
         }
@@ -545,8 +604,8 @@ public class InventoryManager : MonoBehaviour
         {
             originalSlot.AddItem(movingSlot.GetItem(), 1);
         }
-        
-        if(movingSlot.GetQuantity() < 1)
+
+        if (movingSlot.GetQuantity() < 1)
         {
             isMovingItem = false;
             movingSlot.Clear();
@@ -563,7 +622,7 @@ public class InventoryManager : MonoBehaviour
 
     private SlotClass GetClossestSlot()
     {
-        for(int i = 0; i < slots.Length;i++ )
+        for (int i = 0; i < slots.Length; i++)
         {
             if (Vector2.Distance(slots[i].transform.position, Input.mousePosition) <= 64)
             {
@@ -572,6 +631,42 @@ public class InventoryManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    #endregion
+
+    #region Crafting functions
+
+    private void InstantiateRecipesUI() 
+    {
+        foreach (CraftingRecipeClass r in craftingRecipes)
+        {
+            GameObject instance = Instantiate(Scripter.scripter.craftingSlotPrefab, Scripter.scripter.craftingSlotsHolder.transform);
+            //Output Icon
+            instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = r.outputItem.GetItem().itemIcon;
+            //Output Name
+            instance.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = r.outputItem.GetItem().itemName;
+            //Ingredients
+            for (int i = 2; i <= 4; i++)
+            {
+                instance.transform.GetChild(0).transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = r.ingredients[i - 2].GetItem().itemIcon;
+                instance.transform.GetChild(0).transform.GetChild(i).GetChild(1).GetComponent<Text>().text = "x" + r.ingredients[i - 2].GetQuantity();
+            }
+            
+            instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => Craft(r));
+        }
+
+        Scripter.scripter.craftingScrollBar.value = 1f;
+    }
+
+    private void Craft(CraftingRecipeClass recipe)
+    {
+        if (!recipe.CanCraft(this))
+        {
+            return;
+        }
+
+        recipe.Craft(this);
     }
 
     #endregion

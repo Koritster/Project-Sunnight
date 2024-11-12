@@ -62,5 +62,7 @@ public class Chest : MonoBehaviour
                 instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => Destroy(instance));
             }
         }
+
+        Scripter.scripter.chestScrollBar.value = 1f;
     }
 }

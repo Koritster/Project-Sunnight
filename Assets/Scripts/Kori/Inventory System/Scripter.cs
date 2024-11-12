@@ -10,8 +10,13 @@ public class Scripter : MonoBehaviour
 
     [Header("Chest Attributes")]
     public GameObject chestSlotsHolder;
-    public Scrollbar scrollBar;
+    public Scrollbar chestScrollBar;
     public GameObject chestSlotPrefab;
+
+    [Header("Crafting Attributes")]
+    public GameObject craftingSlotsHolder;
+    public Scrollbar craftingScrollBar;
+    public GameObject craftingSlotPrefab;
 
     [Header("Inventory Attributes")]
     public InventoryManager inventory;
