@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         {
             OpenMenu();
             cs_Inventory.SetActive(true);
-            //cs_Crafting.SetActive(true);
+            cs_Crafting.SetActive(true);
             cs_InGame.SetActive(false);
         }
         //Abrir cofre o agarrar objetos
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour
         cs_Inventory.SetActive(false);
         cs_InformationPanel.SetActive(false);
         cs_Pause.SetActive(false);
-        //cs_Crafting.SetActive(false);
+        cs_Crafting.SetActive(false);
         cs_Chest.SetActive(false);
     }
 

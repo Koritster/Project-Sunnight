@@ -20,5 +20,6 @@ MonoBehaviour:
   objectPrefab: {fileID: 5692048320783197004, guid: 771519935c000bf409942a099d437924, type: 3}
   objectPrefabPickable: {fileID: 0}
   toolType: 2
-  damagePoints: 800
+  damagePoints: 8
+  rayLenght: 4
   toolSprite: {fileID: 21300000, guid: 98eef912249da6d4e88830c5550cfb8b, type: 3}

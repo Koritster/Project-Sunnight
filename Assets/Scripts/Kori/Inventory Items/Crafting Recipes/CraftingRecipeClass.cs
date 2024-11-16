@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Tool Class", menuName = "Item/Crafting/New Recipe")]
+[CreateAssetMenu(fileName = "New Crafting Recipe", menuName = "Item/Crafting/New Recipe")]
 public class CraftingRecipeClass : ScriptableObject 
 {
     #region Crafting Functions

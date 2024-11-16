@@ -109,6 +109,8 @@ public class InventoryManager : MonoBehaviour
             slots[i] = slotHolder.transform.GetChild(i).gameObject;
         }
 
+        InstantiateRecipesUI();
+
         Add(itemToAdd, 1);
         Remove(itemToRemove);
 
@@ -187,7 +189,6 @@ public class InventoryManager : MonoBehaviour
 
 
         //Seccion - Information Panel
-
         SlotClass hoverSlot = GetClossestSlot();
         if (hoverSlot != null)
         {
@@ -233,6 +234,8 @@ public class InventoryManager : MonoBehaviour
                 img_Stats[3].gameObject.SetActive(true);
                 txt_Stats[3].gameObject.SetActive(true);
 
+                RectTransform rt = img_Stats[3].GetComponent<RectTransform>();
+                rt.sizeDelta = new Vector2(tempTool.toolSprite.bounds.size.x * 50, tempTool.toolSprite.bounds.size.y * 50);
                 img_Stats[3].sprite = tempTool.toolSprite;
                 txt_Stats[3].text = tempTool.damagePoints + "";
             }
@@ -379,6 +382,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     //Remover objeto, retorna falso si el objeto no está en el inventario, retorna verdadero si sí
+    //Se le debe pasar como parametro un objeto y removerá solo uno
     public bool Remove(ItemClass item)
     {
         if (item == null)
@@ -416,6 +420,7 @@ public class InventoryManager : MonoBehaviour
         return true;
     }
 
+    //Se le debe pasar como parametro un objeto y la cantidad a remover
     public bool Remove(ItemClass item, int quantity)
     {
         if (item == null)
@@ -464,6 +469,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     //Clase que verifica si el inventario contiene un objeto en particular
+    //Se le debe pasar como parametro el objeto a buscar y retorna el objeto si lo encuentra
     public SlotClass Contains(ItemClass item)
     {
         for (int i = 0; i < items.Length; i++)
@@ -477,6 +483,7 @@ public class InventoryManager : MonoBehaviour
         return null;
     }
 
+    //Se le debe pasar como parametro el objeto a buscar y la cantidad mínima y retorna true si se cuenta con él, false si no
     public bool Contains(ItemClass item, int quantity)
     {
         for (int i = 0; i < items.Length; i++)
@@ -649,8 +656,16 @@ public class InventoryManager : MonoBehaviour
             //Ingredients
             for (int i = 2; i <= 4; i++)
             {
-                instance.transform.GetChild(0).transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = r.ingredients[i - 2].GetItem().itemIcon;
-                instance.transform.GetChild(0).transform.GetChild(i).GetChild(1).GetComponent<Text>().text = "x" + r.ingredients[i - 2].GetQuantity();
+                try
+                {
+                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = r.ingredients[i - 2].GetItem().itemIcon;
+                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(1).GetComponent<Text>().text = "x" + r.ingredients[i - 2].GetQuantity();
+                }
+                catch
+                {
+                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
+                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
+                }
             }
             
             instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => Craft(r));

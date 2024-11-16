@@ -18,5 +18,5 @@ MonoBehaviour:
   lifePoints: 72
   dropItems:
   - item: {fileID: 11400000, guid: 29106aa626cc73e40a070aa1a1236f30, type: 2}
-    probabilities: {x: -1, y: 2}
+    probabilities: {x: -1, y: 1}
     quantity: 2

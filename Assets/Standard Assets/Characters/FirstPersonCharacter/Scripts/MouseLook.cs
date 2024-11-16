@@ -80,7 +80,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if(menuIsOpen)
             {
-                Debug.Log("Mouse Visible");
                 m_cursorIsLocked = false;
             }
             else if(Input.GetMouseButtonUp(0) || !menuIsOpen)

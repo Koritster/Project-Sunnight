@@ -233,15 +233,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_Input.Normalize();
             }
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && m_Input.sqrMagnitude > 0.1)
             {
-                Debug.Log("Correr");
                 anim.SetBool("Walking", true);
                 anim.speed = 1.2f;
             }
             else if (m_Input.sqrMagnitude > 0.1)
             {
-                Debug.Log("Caminar");
                 anim.SetBool("Walking", true);
                 anim.speed = 1f;
             }

@@ -24,7 +24,7 @@ public class Scripter : MonoBehaviour
     [Header("Player Attributes")]
     public GameObject player;
     public hambre_vida_Agua statsSystem;
-    public bool inAction;
+    private bool inAction;
 
     void Awake()
     {
@@ -62,7 +62,18 @@ public class Scripter : MonoBehaviour
     {
         if (!inAction)
         {
-            player.GetComponent<Animator>().SetTrigger("UseTool");
+            if(tool.toolType == ToolClass.ToolType.fireWeapon)
+            {
+                Debug.Log("Disparaste");
+                //Animaciones para armas de fuego
+            }
+            else
+            {
+                Debug.Log("Golpeaste");
+                //Animaciones armas melee
+                player.GetComponent<Animator>().SetTrigger("UseTool");
+            }
+
             StartCoroutine(AttackCoroutine(obj, tool, damagePoints));
         }
     }
