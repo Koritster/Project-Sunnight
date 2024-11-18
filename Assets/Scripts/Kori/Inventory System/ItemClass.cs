@@ -22,4 +22,5 @@ public class ItemClass : ScriptableObject
     public virtual MiscClass GetMisc() { return null; }
     public virtual ToolClass GetTool() { return null; }
     public virtual ConsumableClass GetConsumable() { return null; }
+    public virtual ConstructionClass GetConstruction() { return null; }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -39,9 +40,18 @@ public class Enemy : MonoBehaviour
     //States
     public float sightRange, attackRange;
     bool playerInSightRange, playerInaAttackRange;
+
+    [SerializeField]
+    private AudioClip onHit;
+    [SerializeField]
+    private AudioClip[] randomNoises;
+
+    private Animator anim;
+    private AudioSource audSource;
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -68,7 +78,7 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Player").transform;
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     private void Patroling()
@@ -125,6 +135,12 @@ public class Enemy : MonoBehaviour
     {
         //El enemigo persigue al jugador
         agent.SetDestination(player.position);
+        
+        if (!anim.GetBool("Running"))
+        {
+            anim.SetBool("Running", true);
+            anim.SetBool("Walking", false);
+        }
     }
     private void AttackPlayer()
     {
@@ -140,8 +156,10 @@ public class Enemy : MonoBehaviour
             }
 
             alreadyAttacked = true;
+            anim.SetTrigger("Attack");
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+
     }
     private void ResetAttack()
     {
@@ -156,6 +174,8 @@ public class Enemy : MonoBehaviour
         {
             Invoke(nameof(DestroyEnemy), .5f);
         }
+        audSource.clip = onHit;
+        audSource.Play();
     }
 
     private void DestroyEnemy()
@@ -176,8 +196,10 @@ public class Enemy : MonoBehaviour
     {
         // Esperar el tiempo de pausa antes de continuar
         agent.isStopped = true;
+        anim.SetBool("Walking", false);
         yield return new WaitForSeconds(patrolPauseTime);
         agent.isStopped = false;
         isPatrolling = true;
+        anim.SetBool("Walking", true);
     }
 }
