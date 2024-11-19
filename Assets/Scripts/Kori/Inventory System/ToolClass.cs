@@ -34,6 +34,7 @@ public class ToolClass : ItemClass
         if(toolType == ToolType.fireWeapon)
         {
             tempRayLenght = rayLenght * 3;
+            Gun.gun.Shoot();
         }
         //Al usar otro tipo de arma
         else

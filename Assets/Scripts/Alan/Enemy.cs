@@ -166,7 +166,7 @@ public class Enemy : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
 
