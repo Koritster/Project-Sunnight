@@ -48,4 +48,13 @@ public class EnemySpawner : MonoBehaviour
         // Elegir un enemigo aleatorio del arreglo y spawnearlo en una posición aleatoria
         Instantiate(enemiesSpawn[Random.Range(0, enemiesSpawn.Length)], RandomSpawn(), Quaternion.identity);
     }
+
+    private void OnDrawGizmos()
+    {
+        // Configurar el color del Gizmo
+        Gizmos.color = new Color(1, 0, 0, 0.5f); // Rojo semitransparente
+
+        // Dibujar un círculo que representa el rango de spawn
+        Gizmos.DrawWireSphere(transform.position, spawnRange);
+    }
 }

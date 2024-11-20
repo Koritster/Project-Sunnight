@@ -10,6 +10,7 @@ public class ToolClass : ItemClass
 
     public int damagePoints;
     public float rayLenght = 4;
+    public ParticleSystem particles;
 
     public Sprite toolSprite;
 
@@ -34,7 +35,7 @@ public class ToolClass : ItemClass
         if(toolType == ToolType.fireWeapon)
         {
             tempRayLenght = rayLenght * 3;
-            Gun.gun.Shoot();
+            particles.Play();
         }
         //Al usar otro tipo de arma
         else
