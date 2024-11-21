@@ -10,7 +10,6 @@ public class ToolClass : ItemClass
 
     public int damagePoints;
     public float rayLenght = 4;
-    public ParticleSystem particles;
 
     public Sprite toolSprite;
 
@@ -35,7 +34,14 @@ public class ToolClass : ItemClass
         if(toolType == ToolType.fireWeapon)
         {
             tempRayLenght = rayLenght * 3;
-            particles.Play();
+            try
+            {
+                objectPrefab.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+            }
+            catch
+            {
+                Debug.Log("Falta ponerle particulas a esta madre w");
+            }
         }
         //Al usar otro tipo de arma
         else

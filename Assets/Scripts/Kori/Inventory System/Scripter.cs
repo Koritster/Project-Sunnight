@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 public class Scripter : MonoBehaviour
 {
@@ -13,10 +15,18 @@ public class Scripter : MonoBehaviour
     public Scrollbar chestScrollBar;
     public GameObject chestSlotPrefab;
 
+    [System.Serializable]
+    public class CraftingSlots
+    {
+        public string craftingType;
+        public GameObject craftingSlotsHolder;
+    }
+
     [Header("Crafting Attributes")]
-    public GameObject craftingSlotsHolder;
-    public Scrollbar craftingScrollBar;
+    public CraftingSlots[] craftingSlots;
     public GameObject craftingSlotPrefab;
+    public Scrollbar craftingScrollBar;
+    public CraftingRecipeClass[] craftingRecipes;
 
     [Header("Inventory Attributes")]
     public InventoryManager inventory;
@@ -35,6 +45,8 @@ public class Scripter : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
         statsSystem = player.GetComponent<hambre_vida_Agua>();
+
+        GetCrafteos();
     }
 
     #region Chest Functions
@@ -95,6 +107,30 @@ public class Scripter : MonoBehaviour
     {
         //Freeze enemies
         //Freeze stats system
+    }
+
+    #endregion
+
+    #region Crafting Functions
+
+    private void GetCrafteos()
+    {
+        Debug.Log("Buscando...");
+        string[] guids = AssetDatabase.FindAssets("t:MyCustomScriptableObject", new[] { "Assets" });
+
+        craftingRecipes = new CraftingRecipeClass[guids.Length];
+
+        for (int i = 0; i < guids.Length; i++)
+        {
+            // Obtener la ruta completa del asset
+            string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
+
+            // Cargar el ScriptableObject específico
+            craftingRecipes[i] = AssetDatabase.LoadAssetAtPath<CraftingRecipeClass>(assetPath);
+
+            // Mostrar el nombre del objeto cargado
+            Debug.Log("Cargado: " + craftingRecipes[i].name);
+        }
     }
 
     #endregion

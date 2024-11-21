@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -109,7 +110,7 @@ public class InventoryManager : MonoBehaviour
             slots[i] = slotHolder.transform.GetChild(i).gameObject;
         }
 
-        InstantiateRecipesUI();
+        //InstantiateRecipesUI();
 
         Add(itemToAdd, 1);
         Remove(itemToRemove);
@@ -644,7 +645,7 @@ public class InventoryManager : MonoBehaviour
 
     #region Crafting functions
 
-    private void InstantiateRecipesUI() 
+    /*private void InstantiateRecipesUI() 
     {
         foreach (CraftingRecipeClass r in craftingRecipes)
         {
@@ -672,7 +673,7 @@ public class InventoryManager : MonoBehaviour
         }
 
         Scripter.scripter.craftingScrollBar.value = 1f;
-    }
+    }*/
 
     private void Craft(CraftingRecipeClass recipe)
     {
