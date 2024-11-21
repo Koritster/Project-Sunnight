@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5673881519262072388}
   - component: {fileID: 5149241816342811633}
   - component: {fileID: 5639729065271244518}
+  - component: {fileID: 2865040795574897704}
+  - component: {fileID: 8068195343053103327}
   m_Layer: 0
   m_Name: Edificio03.06
   m_TagString: Untagged
@@ -86,3 +88,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2865040795574897704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970689616764362710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23100822, y: 0.40952247, z: 0.3779046}
+  m_Center: {x: 0.0041696094, y: -0.05099585, z: -0.13759062}
+--- !u!65 &8068195343053103327
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970689616764362710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15770206, y: 0.040241174, z: 0.06803196}
+  m_Center: {x: 0.0049958713, y: 0.17336355, z: -0.29252693}

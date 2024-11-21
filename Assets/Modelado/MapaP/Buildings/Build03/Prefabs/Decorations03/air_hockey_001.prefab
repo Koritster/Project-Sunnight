@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2301109204181550975}
   - component: {fileID: 2864538005494642063}
   - component: {fileID: 8206011430430400215}
+  - component: {fileID: 1278316442815006934}
   m_Layer: 0
   m_Name: air_hockey_001
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1278316442815006934
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582142101380071034}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020550618, y: 0.013527191, z: 0.014759594}
+  m_Center: {x: 0.00000031944361, y: 0.0034928736, z: 0.000007932539}

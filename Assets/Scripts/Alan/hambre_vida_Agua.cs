@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Profiling;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 
 public class hambre_vida_Agua : MonoBehaviour
@@ -53,6 +55,67 @@ public class hambre_vida_Agua : MonoBehaviour
     void Update()
     {
         // Controlar la disminución del hambre y el agua
+        UpdateHungry();
+        UpdateThirst();
+
+        if (hambre <= 0f || agua <= 0f)
+        {
+            UpdateLifePoints();
+        }
+    }
+
+    #region Public Functions
+
+    // Método para recibir daño
+    public void RecibirDaño(float lifePoints)
+    {
+        vida -= lifePoints;
+        UpdateLifePoints();
+    }
+
+    public void Curar(float lifePoints)
+    {
+        vida += lifePoints;
+        if (vida > llenoCAV)
+        {
+            vida = llenoCAV;
+        }
+        UpdateLifePoints();
+    }
+
+    public void ChangeHungry(float hungryPoints)
+    {
+        hambre += hungryPoints;
+        if (hambre > llenoCAV)
+        {
+            hambre = llenoCAV;
+        }
+        UpdateHungry();
+    }
+
+    public void ChangeThirst(float thirstPoints)
+    {
+        agua += thirstPoints;
+        if(agua > llenoCAV)
+        {
+            agua = llenoCAV;
+        }
+        UpdateThirst();
+    }
+
+    #endregion
+
+    #region Private Functions
+
+    private void ActualizarFillAmount(Image img, float valor)
+    {
+        // Actualizar el  porcentaje de hambre o agua
+        float porcentaje = valor / llenoCAV;
+        img.fillAmount = porcentaje;
+    }
+
+    private void UpdateHungry()
+    {
         tiempoHambre -= Time.deltaTime;
         if (tiempoHambre <= 0f)
         {
@@ -61,10 +124,14 @@ public class hambre_vida_Agua : MonoBehaviour
             {
                 hambre = 0f;
             }
-            ActualizarFillAmount(hambre_img, hambre);
             tiempoHambre = intervaloDisminucionHambre;
         }
 
+        ActualizarFillAmount(hambre_img, hambre);
+    }
+
+    private void UpdateThirst()
+    {
         tiempoAgua -= Time.deltaTime;
         if (tiempoAgua <= 0f)
         {
@@ -73,54 +140,28 @@ public class hambre_vida_Agua : MonoBehaviour
             {
                 agua = 0f;
             }
-            ActualizarFillAmount(agua_img, agua);
             tiempoAgua = intervaloDisminucionAgua;
         }
 
-        if (hambre == 0f || agua == 0f)
-        {
-            tiempoPerdidaVida -= Time.deltaTime;
-            if (tiempoPerdidaVida <= 0f)
-            {
-                vida -= cantidadPerdidaVida;
-                if (vida <= 0f)
-                {
-                    vida = 0f;
-                }
-                ActualizarFillAmount(vida_img, vida);
-                tiempoPerdidaVida = velocidadPerdidaVida;
-            }
-        }
-        //----------------------------------------------------------------------------------------------------------
-        /*if (Input.GetKey(KeyCode.W))
-        {
-            tiempoHambre -= Time.deltaTime * 0.5f;
-            tiempoAgua -= Time.deltaTime * 0.5f;
-        }
-
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            tiempoHambre -= Time.deltaTime * 2f;
-            tiempoAgua -= Time.deltaTime * 2f;
-        }*/
+        ActualizarFillAmount(agua_img, agua);
     }
 
-    // Método para recibir daño
-    public void RecibirDaño(float daño)
+    private void UpdateLifePoints()
     {
-        vida -= daño;
-        if (vida <= 0f)
+        tiempoPerdidaVida -= Time.deltaTime;
+        if (tiempoPerdidaVida <= 0f)
         {
-            vida = 0f;
-            Debug.Log("Jugador ha muerto");
+            vida -= cantidadPerdidaVida;
+            if (vida <= 0f)
+            {
+                vida = 0f;
+                Debug.LogWarning("El jugador ha muerto");
+            }
+            tiempoPerdidaVida = velocidadPerdidaVida;
         }
+
         ActualizarFillAmount(vida_img, vida);
     }
 
-    void ActualizarFillAmount(Image img, float valor)
-    {
-        // Actualizar el  porcentaje de hambre o agua
-        float porcentaje = valor / llenoCAV;
-        img.fillAmount = porcentaje;
-    }
+    #endregion
 }

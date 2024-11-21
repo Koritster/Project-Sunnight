@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5124441375218558519}
   - component: {fileID: 3898101804083066273}
   - component: {fileID: 4106117546439345105}
+  - component: {fileID: 5194943318826555928}
+  - component: {fileID: 6214396409844292708}
   m_Layer: 0
   m_Name: Valla.012
   m_TagString: Untagged
@@ -26,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8592977434300206965}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5190233, y: 0.48022372, z: 0.51902324, w: -0.48022377}
+  m_LocalRotation: {x: -0.51902235, y: -0.48022476, z: -0.51902235, w: 0.48022476}
   m_LocalPosition: {x: -464.7669, y: 3.3186388, z: 1264.0217}
   m_LocalScale: {x: 1464.4008, y: 883.53613, z: 665.277}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -94.447, y: -90, z: 0}
 --- !u!33 &3898101804083066273
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -83,3 +85,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5194943318826555928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592977434300206965}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0023397906, y: 0.15998778, z: 0.06}
+  m_Center: {x: -0.0041348287, y: 0.01878748, z: 0.0003059534}
+--- !u!65 &6214396409844292708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8592977434300206965}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.034220092, y: 0.004615552, z: 0.06}
+  m_Center: {x: 0.011805323, y: -0.05889856, z: 0.00030595486}

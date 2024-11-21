@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3961625845782086345}
   - component: {fileID: 6555676012856559431}
   - component: {fileID: 5397767383009539080}
+  - component: {fileID: 8881589799616426957}
   m_Layer: 0
   m_Name: tv_wall_001.054
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8881589799616426957
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130295764575500792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.023688158, y: 0.016933722, z: 0.0032687786}
+  m_Center: {x: -0.00034026426, y: 0.008466859, z: -0.00007146288}

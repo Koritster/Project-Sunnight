@@ -5,18 +5,19 @@ TagManager:
   serializedVersion: 2
   tags:
   - Novision
+  - Fire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - post
   - Water
   - UI
+  - postprocessing
+  - Player
+  - PostProcessing
   - 
-  - 
-  - 
-  - 
-  - 
+  - ItemInHand
   - 
   - 
   - 
