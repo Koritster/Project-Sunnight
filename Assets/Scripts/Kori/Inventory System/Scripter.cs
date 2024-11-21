@@ -46,7 +46,7 @@ public class Scripter : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         statsSystem = player.GetComponent<hambre_vida_Agua>();
 
-        GetCrafteos();
+        craftingRecipes = LoadCraftingRecipes();
     }
 
     #region Chest Functions
@@ -113,24 +113,25 @@ public class Scripter : MonoBehaviour
 
     #region Crafting Functions
 
-    private void GetCrafteos()
+    string folderPath = "Assets/Scripts/Kori/Inventory Items/Crafting Recipes";
+
+    public CraftingRecipeClass[] LoadCraftingRecipes()
     {
-        Debug.Log("Buscando...");
-        string[] guids = AssetDatabase.FindAssets("t:MyCustomScriptableObject", new[] { "Assets" });
+        
 
-        craftingRecipes = new CraftingRecipeClass[guids.Length];
+        // Obtiene las rutas de todos los archivos .asset en la carpeta especificada
+        string[] assetPaths = AssetDatabase.FindAssets("t:CraftingRecipeClass", new[] { folderPath });
 
-        for (int i = 0; i < guids.Length; i++)
+        CraftingRecipeClass[] recipes = new CraftingRecipeClass[assetPaths.Length];
+
+        // Convierte las rutas en objetos del tipo CraftingRecipeClass
+        for (int i = 0; i < assetPaths.Length; i++)
         {
-            // Obtener la ruta completa del asset
-            string assetPath = AssetDatabase.GUIDToAssetPath(guids[i]);
-
-            // Cargar el ScriptableObject específico
-            craftingRecipes[i] = AssetDatabase.LoadAssetAtPath<CraftingRecipeClass>(assetPath);
-
-            // Mostrar el nombre del objeto cargado
-            Debug.Log("Cargado: " + craftingRecipes[i].name);
+            string path = AssetDatabase.GUIDToAssetPath(assetPaths[i]);
+            recipes[i] = AssetDatabase.LoadAssetAtPath<CraftingRecipeClass>(path);
         }
+
+        return recipes;
     }
 
     #endregion

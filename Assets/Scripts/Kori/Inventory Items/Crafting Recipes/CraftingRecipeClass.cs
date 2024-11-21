@@ -10,6 +10,15 @@ public class CraftingRecipeClass : ScriptableObject
     [Header("Recipe attributes")]
     public SlotClass[] ingredients;
     public SlotClass outputItem;
+    public CraftCategory category;
+
+    public enum CraftCategory
+    {
+        Shelter,
+        Decorations,
+        Tools,
+        Useful
+    }
 
     public bool CanCraft(InventoryManager inv)
     {

@@ -22,3 +22,4 @@ MonoBehaviour:
   outputItem:
     item: {fileID: 11400000, guid: 0079d21279449174e9d955c93723b0d4, type: 2}
     quantity: 1
+  category: 3

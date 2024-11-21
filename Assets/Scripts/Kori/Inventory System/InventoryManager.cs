@@ -4,6 +4,7 @@ using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static Scripter;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -645,35 +646,52 @@ public class InventoryManager : MonoBehaviour
 
     #region Crafting functions
 
-    /*private void InstantiateRecipesUI() 
+    private void InstantiateRecipesUI()
     {
-        foreach (CraftingRecipeClass r in craftingRecipes)
+        //for(int i = 0; i < craftingSlots.Length; i++)
+        foreach (CraftingSlots s in Scripter.scripter.craftingSlots)
         {
-            GameObject instance = Instantiate(Scripter.scripter.craftingSlotPrefab, Scripter.scripter.craftingSlotsHolder.transform);
-            //Output Icon
-            instance.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = r.outputItem.GetItem().itemIcon;
-            //Output Name
-            instance.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = r.outputItem.GetItem().itemName;
-            //Ingredients
-            for (int i = 2; i <= 4; i++)
+            string type = s.craftingType;
+            int contador = 0;
+            foreach (CraftingRecipeClass r in craftingRecipes)
             {
-                try
+                if (r.category.ToString() == type)
                 {
-                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = r.ingredients[i - 2].GetItem().itemIcon;
-                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(1).GetComponent<Text>().text = "x" + r.ingredients[i - 2].GetQuantity();
-                }
-                catch
-                {
-                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
-                    instance.transform.GetChild(0).transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
-                }
+                    GameObject instance = Instantiate(Scripter.scripter.craftingSlotPrefab, s.craftingSlotsHolder.transform);
+                    contador++;
+
+                    Transform button = instance.transform.GetChild(0);
+
+                    button.transform.GetChild(0).GetComponent<Image>().sprite = r.outputItem.GetItem().itemIcon;
+                    button.transform.GetChild(1).GetComponent<Text>().text = r.outputItem.GetItem().itemName;
+
+                    //Ingredients
+                    for (int i = 2; i <= 7; i++)
+                    {
+                        try
+                        {
+                            button.transform.GetChild(i).GetChild(0).GetComponent<Image>().sprite = r.ingredients[i - 2].GetItem().itemIcon;
+                            button.transform.GetChild(i).GetChild(1).GetComponent<Text>().text = "x" + r.ingredients[i - 2].GetQuantity();
+                        }
+                        catch
+                        {
+                            button.transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
+                            button.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
+                        }
+                    }
+
+                    button.GetComponent<Button>().onClick.AddListener(() => Craft(r));
+                }   
             }
-            
-            instance.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(() => Craft(r));
+            if (contador == 1)
+            {
+                GameObject instance = Instantiate(Scripter.scripter.craftingSlotPrefab, s.craftingSlotsHolder.transform);
+                instance.SetActive(false);
+            }
         }
 
         Scripter.scripter.craftingScrollBar.value = 1f;
-    }*/
+    }
 
     private void Craft(CraftingRecipeClass recipe)
     {

@@ -18,3 +18,4 @@ MonoBehaviour:
   outputItem:
     item: {fileID: 11400000, guid: 377290f71c8957e4d80856863435dfe3, type: 2}
     quantity: 1
+  category: 2

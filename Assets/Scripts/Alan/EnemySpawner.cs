@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(SpawnWaves());
+        //StartCoroutine(SpawnWaves());
     }
 
     private Vector3 RandomSpawn()
