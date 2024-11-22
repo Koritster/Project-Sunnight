@@ -71,7 +71,6 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.C))
         {
             OpenMenu();
-            cs_Inventory.SetActive(true);
             cs_Crafting.SetActive(true);
             cs_InGame.SetActive(false);
         }

@@ -117,8 +117,6 @@ public class Scripter : MonoBehaviour
 
     public CraftingRecipeClass[] LoadCraftingRecipes()
     {
-        
-
         // Obtiene las rutas de todos los archivos .asset en la carpeta especificada
         string[] assetPaths = AssetDatabase.FindAssets("t:CraftingRecipeClass", new[] { folderPath });
 

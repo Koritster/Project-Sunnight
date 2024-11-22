@@ -75,11 +75,6 @@ public class InventoryManager : MonoBehaviour
 
     #region Crafting Variables
 
-    [Space(5)]
-    [Header("Crafting Variables")]
-    [Space(5)]
-    [SerializeField] private List<CraftingRecipeClass> craftingRecipes = new List<CraftingRecipeClass>();
-
     #endregion
 
     private void Start()
@@ -117,6 +112,8 @@ public class InventoryManager : MonoBehaviour
         Remove(itemToRemove);
 
         RefreshUI();
+
+        InstantiateRecipesUI();
     }
 
     private void Update()
@@ -653,7 +650,7 @@ public class InventoryManager : MonoBehaviour
         {
             string type = s.craftingType;
             int contador = 0;
-            foreach (CraftingRecipeClass r in craftingRecipes)
+            foreach (CraftingRecipeClass r in Scripter.scripter.craftingRecipes)
             {
                 if (r.category.ToString() == type)
                 {
@@ -681,12 +678,7 @@ public class InventoryManager : MonoBehaviour
                     }
 
                     button.GetComponent<Button>().onClick.AddListener(() => Craft(r));
-                }   
-            }
-            if (contador == 1)
-            {
-                GameObject instance = Instantiate(Scripter.scripter.craftingSlotPrefab, s.craftingSlotsHolder.transform);
-                instance.SetActive(false);
+                }
             }
         }
 
