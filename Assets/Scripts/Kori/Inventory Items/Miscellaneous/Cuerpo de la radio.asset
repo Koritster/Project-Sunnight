@@ -17,4 +17,4 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: bc527d9698b6d034788690933b105f72, type: 3}
   isStackable: 0
   objectPrefab: {fileID: 3328813124558645964, guid: 27d6eafbe6add6d429fab069c0f6cdc3, type: 3}
-  objectPrefabPickable: {fileID: 3328813124558645964, guid: 27d6eafbe6add6d429fab069c0f6cdc3, type: 3}
+  objectPrefabPickable: {fileID: 0}

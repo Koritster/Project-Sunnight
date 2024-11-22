@@ -201,6 +201,12 @@ public class InventoryManager : MonoBehaviour
             if (hoverItem == null)
                 return;
 
+            for (int i = 0; i < txt_Stats.Length; i++)
+            {
+                img_Stats[i].gameObject.SetActive(false);
+                txt_Stats[i].gameObject.SetActive(false);
+            }
+
             itemIconHolder.gameObject.SetActive(true);
             txt_ItemName.gameObject.SetActive(true);
             txt_Description.gameObject.SetActive(true);

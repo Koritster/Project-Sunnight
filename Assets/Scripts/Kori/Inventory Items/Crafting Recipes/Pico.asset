@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d0482b832e516e04a9f44ed47bd61189, type: 3}
-  m_Name: Hacha
+  m_Name: Pico
   m_EditorClassIdentifier: 
   ingredients:
   - item: {fileID: 11400000, guid: c4c6b6ba9fd4ec648aa1e8b7fcf79d1e, type: 2}
@@ -18,6 +18,6 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: e8d2932ca84ecb0488e8a8febaeba2b2, type: 2}
     quantity: 2
   outputItem:
-    item: {fileID: 11400000, guid: 377290f71c8957e4d80856863435dfe3, type: 2}
+    item: {fileID: 11400000, guid: 8384253aa85b0ad4d91b37f92f5bdb56, type: 2}
     quantity: 1
   category: 2

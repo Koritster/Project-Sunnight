@@ -22,3 +22,27 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: f30f1c6102574804fa6e4c4088196828, type: 2}
     probabilities: {x: -2, y: 1}
     quantity: 0
+  - item: {fileID: 11400000, guid: 23784b4f2e6e9a74e9dfde2d48603ddc, type: 2}
+    probabilities: {x: -10, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: d8e411a8984f0b14394a514c4c98cd81, type: 2}
+    probabilities: {x: -8, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: b65111685de622243a49f005339592d6, type: 2}
+    probabilities: {x: 1, y: 3}
+    quantity: 0
+  - item: {fileID: 11400000, guid: e8d2932ca84ecb0488e8a8febaeba2b2, type: 2}
+    probabilities: {x: -1, y: 3}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 3a515b56283010746a6c57ce25ed8cbd, type: 2}
+    probabilities: {x: 1, y: 4}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 088763974cf79604e9fc974d3fb4bf71, type: 2}
+    probabilities: {x: -5, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: a3371a0ddea9fdc458b9c73cdbf68118, type: 2}
+    probabilities: {x: -5, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: aae5ff20437c72f45a2a77b4cdabb630, type: 2}
+    probabilities: {x: -5, y: 1}
+    quantity: 0

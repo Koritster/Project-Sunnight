@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
   m_Name: Roca
   m_EditorClassIdentifier: 
-  itemName: Roca
+  itemName: Piedra
   description: "El peor enemigo de los perritos, pero en su versi\xF3n visible."
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 97b0cc64a6aafc942a3f220c8abb5bc7, type: 3}
   isStackable: 1
-  objectPrefab: {fileID: 0}
-  objectPrefabPickable: {fileID: 0}
+  objectPrefab: {fileID: 2379985269586093446, guid: 06c39f1e2a531ce4299098adaae9a8c7, type: 3}
+  objectPrefabPickable: {fileID: 3559543418671301826, guid: 7f80c50d83b8706419268f52b726b54f, type: 3}
