@@ -16,5 +16,6 @@ MonoBehaviour:
   description: Quizas pueda ayudarme a salir de este lugar.
   itemIcon: {fileID: 21300000, guid: bc527d9698b6d034788690933b105f72, type: 3}
   isStackable: 0
-  objectPrefab: {fileID: 0}
-  objectPrefabPickable: {fileID: 0}
+  objectPrefab: {fileID: 4311533294290495330, guid: 18be1c21dd2ca024999477836508a2d5, type: 3}
+  objectPrefabPickable: {fileID: 4311533294290495330, guid: 18be1c21dd2ca024999477836508a2d5, type: 3}
+  constructionPrefab: {fileID: 6312473455096073544, guid: af682a96b49891d4b8807d5522b13387, type: 3}

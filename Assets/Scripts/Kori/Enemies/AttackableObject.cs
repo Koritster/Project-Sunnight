@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AttackableObject : MonoBehaviour, IAttackable
 {
-    [SerializeField] AudioSource audSource;
     [SerializeField] private AttackableObjectReference obj;
 
+    private AudioSource audSource;
     private int lifePoints;
 
     private void Awake()

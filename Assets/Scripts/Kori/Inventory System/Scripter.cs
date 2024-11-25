@@ -30,6 +30,7 @@ public class Scripter : MonoBehaviour
 
     [Header("Inventory Attributes")]
     public InventoryManager inventory;
+    public FeedbackSystem feedbackSystem;
 
     [Header("Player Attributes")]
     public GameObject player;
@@ -45,6 +46,7 @@ public class Scripter : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
         statsSystem = player.GetComponent<hambre_vida_Agua>();
+        feedbackSystem = player.GetComponent<FeedbackSystem>();
 
         craftingRecipes = LoadCraftingRecipes();
     }

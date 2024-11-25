@@ -300,7 +300,6 @@ public class InventoryManager : MonoBehaviour
 
                 //Instanciar prefabs en caso de no tener
                 //verificar que no esté vació el espacio en la hotbar
-                Debug.Log("Verificando hotbar...");
                 ItemClass tempObj = items[((slots.Length - hotbarSlots.Length) + (i - (slots.Length - hotbarSlots.Length)))].GetItem();
                 if (tempObj != null)
                 {
@@ -308,7 +307,6 @@ public class InventoryManager : MonoBehaviour
                     {
                         Transform trsm_HandAttachment = handAttachment.transform;
                         Transform trsm_tempObj = tempObj.objectPrefab.transform;
-                        Debug.Log("Agregar objeto a la lista");
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)] = Instantiate(tempObj.objectPrefab, new Vector3(0f, 0f, 0f), Quaternion.Euler(trsm_tempObj.eulerAngles), handAttachment.transform);
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localPosition = new Vector3(trsm_tempObj.localPosition.x, trsm_tempObj.localPosition.y, trsm_tempObj.localPosition.z);
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localRotation = Quaternion.Euler(trsm_tempObj.eulerAngles);
@@ -316,13 +314,11 @@ public class InventoryManager : MonoBehaviour
                     //Reemplazar items
                     else if (itemPrefabs[i - (slots.Length - hotbarSlots.Length)] != tempObj)
                     {
-                        Debug.Log("Quitar objeto de la lista");
                         Destroy(itemPrefabs[i - (slots.Length - hotbarSlots.Length)]);
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)] = null;
 
                         Transform trsm_HandAttachment = handAttachment.transform;
                         Transform trsm_tempObj = tempObj.objectPrefab.transform;
-                        Debug.Log("Agregar objeto a la lista");
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)] = Instantiate(tempObj.objectPrefab, new Vector3(0f, 0f, 0f), Quaternion.Euler(trsm_tempObj.eulerAngles), handAttachment.transform);
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localPosition = new Vector3(trsm_tempObj.localPosition.x, trsm_tempObj.localPosition.y, trsm_tempObj.localPosition.z);
                         itemPrefabs[i - (slots.Length - hotbarSlots.Length)].transform.localRotation = Quaternion.Euler(trsm_tempObj.eulerAngles);
@@ -338,7 +334,6 @@ public class InventoryManager : MonoBehaviour
                 //Destruir prefabs en caso de tenerlos instanciados
                 if (items[((slots.Length - hotbarSlots.Length) + (i - (slots.Length - hotbarSlots.Length)))].GetItem() == null && itemPrefabs[i - (slots.Length - hotbarSlots.Length)] != null)
                 {
-                    Debug.Log("Quitar objeto de la lista");
                     Destroy(itemPrefabs[i - (slots.Length - hotbarSlots.Length)]);
                     itemPrefabs[i - (slots.Length - hotbarSlots.Length)] = null;
                 }

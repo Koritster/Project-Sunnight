@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 6548902599277638812}
   - component: {fileID: 3623824786787350272}
   - component: {fileID: 186334021448415734}
-  m_Layer: 0
+  - component: {fileID: 1040714121542271284}
+  m_Layer: 7
   m_Name: FPSController
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -378,6 +379,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1040714121542271284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e334621becdd6944ace0df85e3af582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,7 +404,7 @@ GameObject:
   - component: {fileID: 8100000}
   - component: {fileID: 12474086}
   - component: {fileID: 1496270157420191568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FirstPersonCharacter
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -551,7 +564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6471192612360326072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hand Attach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2726340801875482577}
   - component: {fileID: 5511277185286988017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ItemsCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

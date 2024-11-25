@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(Animator))]
 public class Enemy : MonoBehaviour
 {
     //identificador del NavMeshAgent
