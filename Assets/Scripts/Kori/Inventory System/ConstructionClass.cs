@@ -14,6 +14,7 @@ public class ConstructionClass : ItemClass
         Debug.Log("Construiste algo");
 
         Scripter.scripter.feedbackSystem.constructionPreview.GetComponent<BoxCollider>().isTrigger = false;
+        Scripter.scripter.feedbackSystem.constructionPreview.layer = LayerMask.NameToLayer("Default");
         Scripter.scripter.feedbackSystem.constructionPreview.transform.GetChild(0).gameObject.SetActive(true);
         Scripter.scripter.feedbackSystem.constructionPreview.transform.GetChild(1).gameObject.SetActive(false);
 

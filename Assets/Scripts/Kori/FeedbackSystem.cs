@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class FeedbackSystem : MonoBehaviour
@@ -9,6 +10,7 @@ public class FeedbackSystem : MonoBehaviour
 
     public GameObject constructionPreview;
     BoxCollider constructionCollider;
+    ConstructionClass construction;
 
     int layerMask;
 
@@ -26,10 +28,25 @@ public class FeedbackSystem : MonoBehaviour
         {
             if (inv.selectedItem.GetConstruction())
             {
-                if (constructionPreview == null)
+                if(construction != inv.selectedItem.GetConstruction())
+                {
+                    construction = inv.selectedItem.GetConstruction();
+                    
+                    Destroy(constructionPreview);
+                    constructionPreview = null;
+                    constructionCollider = null;
+                    scripter.constructionPreview = null;
+
+                    GameObject prefab = inv.selectedItem.GetConstruction().constructionPrefab;
+                    constructionPreview = Instantiate(prefab);
+                    scripter.constructionPreview = constructionPreview;
+                    constructionCollider = constructionPreview.GetComponent<BoxCollider>();
+                }
+                else if (constructionPreview == null)
                 {
                     GameObject prefab = inv.selectedItem.GetConstruction().constructionPrefab;
                     constructionPreview = Instantiate(prefab);
+                    scripter.constructionPreview = constructionPreview;
                     constructionCollider = constructionPreview.GetComponent<BoxCollider>();
                 }
 
@@ -38,7 +55,7 @@ public class FeedbackSystem : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, 10f, layerMask))
                 {
-                    if(!constructionPreview.activeSelf)
+                    if (!constructionPreview.activeSelf)
                         constructionPreview.SetActive(true);
 
                     constructionPreview.transform.position = new Vector3(hit.point.x, hit.point.y + (constructionCollider.bounds.size.y / 2), hit.point.z);
@@ -50,10 +67,22 @@ public class FeedbackSystem : MonoBehaviour
             }
         }
         //Destruir el preview
-        else if(constructionPreview != null && constructionCollider.isTrigger)
+        else if (constructionPreview != null && constructionCollider.isTrigger)
         {
             Destroy(constructionPreview);
+            constructionPreview = null;
             constructionCollider = null;
+            scripter.constructionPreview = null;
+        }
+        
+        if (constructionPreview != null)
+        {
+            if (!constructionCollider.isTrigger)
+            {
+                constructionPreview = null;
+                constructionCollider = null;
+                scripter.constructionPreview = null;
+            }
         }
     }
 }

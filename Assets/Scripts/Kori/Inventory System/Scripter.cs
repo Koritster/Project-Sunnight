@@ -30,12 +30,16 @@ public class Scripter : MonoBehaviour
 
     [Header("Inventory Attributes")]
     public InventoryManager inventory;
-    public FeedbackSystem feedbackSystem;
 
     [Header("Player Attributes")]
     public GameObject player;
     public hambre_vida_Agua statsSystem;
+    
     private bool inAction;
+
+    [Header("Inventory Attributes")]
+    public FeedbackSystem feedbackSystem;
+    public GameObject constructionPreview;
 
     void Awake()
     {

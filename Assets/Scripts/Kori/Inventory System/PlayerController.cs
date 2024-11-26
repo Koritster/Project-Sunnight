@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private FirstPersonController fpsController;
 
     [SerializeField] private float raycastLength;
+    [SerializeField] private float speedRotation;
 
     void Awake()
     {
@@ -115,7 +116,17 @@ public class PlayerController : MonoBehaviour
                 inventory.selectedItem.Use(this);
             }
         }
-        
+        //Rotar construcciones
+        else if(Scripter.scripter.inventory.selectedItem != null)
+        {
+            Debug.Log("Rotando");
+            if(Scripter.scripter.inventory.selectedItem.GetConstruction() != null)
+            {
+                float y = Input.GetAxis("Rotate");
+                Scripter.scripter.constructionPreview.transform.Rotate(0, speedRotation * y * Time.deltaTime, 0);
+            }
+        }
+
         //Cerrar todo
         if (!isInventoryOpen)
         {
