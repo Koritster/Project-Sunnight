@@ -37,9 +37,13 @@ public class Scripter : MonoBehaviour
     
     private bool inAction;
 
-    [Header("Inventory Attributes")]
+    [Header("Feedback System Attributes")]
     public FeedbackSystem feedbackSystem;
     public GameObject constructionPreview;
+    public GameObject constructionFeedbackUI;
+
+    [Header("Quests System Attributes")]
+    public QuestsSystem questsSystem;
 
     void Awake()
     {

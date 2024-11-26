@@ -17,6 +17,11 @@ public class ConstructionClass : ItemClass
         Scripter.scripter.feedbackSystem.constructionPreview.layer = LayerMask.NameToLayer("Default");
         Scripter.scripter.feedbackSystem.constructionPreview.transform.GetChild(0).gameObject.SetActive(true);
         Scripter.scripter.feedbackSystem.constructionPreview.transform.GetChild(1).gameObject.SetActive(false);
+        
+        if(this.GetItem().name == "Radio" && Scripter.scripter.questsSystem.questIndex == (Scripter.scripter.questsSystem.quests.Length - 2))
+        {
+            Scripter.scripter.questsSystem.CompleteQuestAnim();
+        }
 
         caller.inventory.UseSelected();
     }

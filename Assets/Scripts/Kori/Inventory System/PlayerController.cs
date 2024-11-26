@@ -67,6 +67,12 @@ public class PlayerController : MonoBehaviour
             cs_Inventory.SetActive(true);
             cs_InformationPanel.SetActive(true);
             cs_InGame.SetActive(false);
+
+            //Mision de abrir inventario
+            if (Scripter.scripter.questsSystem.questIndex == 1)
+            {
+                Scripter.scripter.questsSystem.CompleteQuestAnim();
+            }
         }
         //Abrir crafteo
         else if (Input.GetKeyDown(KeyCode.C))
@@ -74,6 +80,12 @@ public class PlayerController : MonoBehaviour
             OpenMenu();
             cs_Crafting.SetActive(true);
             cs_InGame.SetActive(false);
+
+            //Mision de abrir crafteo
+            if (Scripter.scripter.questsSystem.questIndex == 2)
+            {
+                Scripter.scripter.questsSystem.CompleteQuestAnim();
+            }
         }
         //Abrir cofre o agarrar objetos
         else if (Input.GetKeyDown(KeyCode.F))
@@ -93,10 +105,23 @@ public class PlayerController : MonoBehaviour
                     cs_Inventory.SetActive(true);
                     cs_Chest.SetActive(true);
                     cs_InGame.SetActive(false);
+
+                    //Mision de abrir cofre
+                    if (Scripter.scripter.questsSystem.questIndex == 0)
+                    {
+                        Scripter.scripter.questsSystem.CompleteQuestAnim();
+                    }
                 }
                 else if(hit.collider.gameObject.TryGetComponent<IPickable>(out IPickable obj))
                 {
                     obj.PickItem();
+                }
+                else if (hit.collider.CompareTag("Radio"))
+                {
+                    if(Scripter.scripter.questsSystem.questIndex == (Scripter.scripter.questsSystem.quests.Length - 1))
+                    {
+                        Scripter.scripter.questsSystem.CompleteQuestAnim();
+                    }
                 }
             }
             else

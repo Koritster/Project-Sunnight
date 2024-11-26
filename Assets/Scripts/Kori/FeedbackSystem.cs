@@ -23,15 +23,20 @@ public class FeedbackSystem : MonoBehaviour
 
     void Update()
     {
+        ConstructionSystem();
+    }
+
+    private void ConstructionSystem()
+    {
         //Sistema de construcción
         if (inv.selectedItem != null)
         {
             if (inv.selectedItem.GetConstruction())
             {
-                if(construction != inv.selectedItem.GetConstruction())
+                if (construction != inv.selectedItem.GetConstruction())
                 {
                     construction = inv.selectedItem.GetConstruction();
-                    
+
                     Destroy(constructionPreview);
                     constructionPreview = null;
                     constructionCollider = null;
@@ -59,10 +64,14 @@ public class FeedbackSystem : MonoBehaviour
                         constructionPreview.SetActive(true);
 
                     constructionPreview.transform.position = new Vector3(hit.point.x, hit.point.y + (constructionCollider.bounds.size.y / 2), hit.point.z);
+
+                    scripter.constructionFeedbackUI.SetActive(true);
                 }
                 else
                 {
                     constructionPreview.SetActive(false);
+
+                    scripter.constructionFeedbackUI.SetActive(false);
                 }
             }
         }
@@ -73,8 +82,10 @@ public class FeedbackSystem : MonoBehaviour
             constructionPreview = null;
             constructionCollider = null;
             scripter.constructionPreview = null;
+
+            scripter.constructionFeedbackUI.SetActive(false);
         }
-        
+
         if (constructionPreview != null)
         {
             if (!constructionCollider.isTrigger)
@@ -82,6 +93,8 @@ public class FeedbackSystem : MonoBehaviour
                 constructionPreview = null;
                 constructionCollider = null;
                 scripter.constructionPreview = null;
+
+                scripter.constructionFeedbackUI.SetActive(false);
             }
         }
     }
