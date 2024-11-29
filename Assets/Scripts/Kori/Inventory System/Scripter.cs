@@ -34,13 +34,19 @@ public class Scripter : MonoBehaviour
     [Header("Player Attributes")]
     public GameObject player;
     public hambre_vida_Agua statsSystem;
-    
+    public PlayerController playerController;
+
+    [SerializeField] private AnimationClip useToolClip;
+    [SerializeField] private AnimationClip useFireWeaponClip;
+
     private bool inAction;
 
     [Header("Feedback System Attributes")]
     public FeedbackSystem feedbackSystem;
     public GameObject constructionPreview;
     public GameObject constructionFeedbackUI;
+    public GameObject chestFeedbackUI;
+    public GameObject grabItemsFeedbackUI;
 
     [Header("Quests System Attributes")]
     public QuestsSystem questsSystem;
@@ -54,6 +60,7 @@ public class Scripter : MonoBehaviour
 
         player = GameObject.FindWithTag("Player");
         statsSystem = player.GetComponent<hambre_vida_Agua>();
+        playerController = player.GetComponent<PlayerController>();
         feedbackSystem = player.GetComponent<FeedbackSystem>();
 
         craftingRecipes = LoadCraftingRecipes();
@@ -84,28 +91,65 @@ public class Scripter : MonoBehaviour
     {
         if (!inAction)
         {
+            float animDuration;
+
             if(tool.toolType == ToolClass.ToolType.fireWeapon)
             {
-                Debug.Log("Disparaste");
                 //Animaciones para armas de fuego
+                Debug.Log("Disparaste");
+                animDuration = useFireWeaponClip.length;
+                player.GetComponent<Animator>().SetTrigger("UseFireWeapon");
             }
             else
             {
-                Debug.Log("Golpeaste");
                 //Animaciones armas melee
+                Debug.Log("Golpeaste");
+                animDuration = useToolClip.length;
                 player.GetComponent<Animator>().SetTrigger("UseTool");
             }
 
-            StartCoroutine(AttackCoroutine(obj, tool, damagePoints));
+            StartCoroutine(AttackCoroutine(obj, tool, damagePoints, animDuration));
         }
     }
 
-    IEnumerator AttackCoroutine(IAttackable obj, ToolClass tool, int damagePoints)
+    public void Attack(ToolClass tool)
+    {
+        if (!inAction)
+        {
+            float animDuration;
+
+            if (tool.toolType == ToolClass.ToolType.fireWeapon)
+            {
+                //Animaciones para armas de fuego
+                Debug.Log("Disparaste");
+                animDuration = useFireWeaponClip.length;
+                player.GetComponent<Animator>().SetTrigger("UseFireWeapon");
+            }
+            else
+            {
+                //Animaciones armas melee
+                Debug.Log("Golpeaste");
+                animDuration = useToolClip.length;
+                player.GetComponent<Animator>().SetTrigger("UseTool");
+            }
+
+            StartCoroutine(AttackCoroutine(animDuration));
+        }
+    }
+
+    IEnumerator AttackCoroutine(IAttackable obj, ToolClass tool, int damagePoints, float animDuration)
     {
         inAction = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(animDuration/2);
         obj.Hurt(tool, damagePoints);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(animDuration / 2);
+        inAction = false;
+    }
+
+    IEnumerator AttackCoroutine(float animDuration)
+    {
+        inAction = true;
+        yield return new WaitForSeconds(animDuration);
         inAction = false;
     }
 

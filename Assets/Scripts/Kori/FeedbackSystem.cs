@@ -14,16 +14,40 @@ public class FeedbackSystem : MonoBehaviour
 
     int layerMask;
 
+    float rayLenght;
+
     private void Start()
     {
         layerMask = ~LayerMask.GetMask("Player", "Construction");
         scripter = Scripter.scripter;
         inv = scripter.inventory;
+        rayLenght = scripter.playerController.raycastLength;
     }
 
     void Update()
     {
         ConstructionSystem();
+
+        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, rayLenght, layerMask))
+        {
+            if (hit.collider.GetComponent<Chest>())
+            {
+                scripter.chestFeedbackUI.SetActive(true);
+            }
+            else if (hit.collider.GetComponent<PickableItem>())
+            {
+                scripter.grabItemsFeedbackUI.SetActive(true);
+            }
+            else
+            {
+                scripter.chestFeedbackUI.SetActive(false);
+                scripter.grabItemsFeedbackUI.SetActive(false);
+            }
+
+        }
     }
 
     private void ConstructionSystem()

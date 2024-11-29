@@ -6,6 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class PlayerController : MonoBehaviour
 {
     public InventoryManager inventory;
+    public float raycastLength;
 
     [SerializeField] private GameObject cs_InGame;
     [SerializeField] private GameObject cs_Inventory;
@@ -20,7 +21,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private FirstPersonController fpsController;
 
-    [SerializeField] private float raycastLength;
     [SerializeField] private float speedRotation;
 
     void Awake()
@@ -144,9 +144,9 @@ public class PlayerController : MonoBehaviour
         //Rotar construcciones
         else if(Scripter.scripter.inventory.selectedItem != null)
         {
-            Debug.Log("Rotando");
             if(Scripter.scripter.inventory.selectedItem.GetConstruction() != null)
             {
+                Debug.Log("Rotando...");
                 float y = Input.GetAxis("Rotate");
                 Scripter.scripter.constructionPreview.transform.Rotate(0, speedRotation * y * Time.deltaTime, 0);
             }
