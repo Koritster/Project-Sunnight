@@ -79,7 +79,8 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.FindWithTag("Player").transform;
+        //player = GameObject.FindWithTag("Player").transform;
+        player = Scripter.scripter.player.transform;
     }
 
     private void Patroling()
