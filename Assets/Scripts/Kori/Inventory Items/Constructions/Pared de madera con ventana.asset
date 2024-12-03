@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dcd5e1081e6e34c8c2ca2395c8e96d, type: 3}
+  m_Name: Pared de madera con ventana
+  m_EditorClassIdentifier: 
+  itemName: Wooden wall with window
+  description: "A rustic barrier with a side of daylight. Keep an eye on intruders!\t"
+  itemIcon: {fileID: 21300000, guid: c0fc64e62eb8b794595c29d18844bd36, type: 3}
+  isStackable: 1
+  objectPrefab: {fileID: 1917563597535705003, guid: 7d604cc5f778fd649a7f5e8bad93801e, type: 3}
+  objectPrefabPickable: {fileID: 1917563597535705003, guid: 7d604cc5f778fd649a7f5e8bad93801e, type: 3}
+  constructionPrefab: {fileID: 309713702052725075, guid: aa63b186d6096244fb1486ee1f54cf05, type: 3}

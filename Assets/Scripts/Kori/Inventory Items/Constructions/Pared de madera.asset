@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dcd5e1081e6e34c8c2ca2395c8e96d, type: 3}
   m_Name: Pared de madera
   m_EditorClassIdentifier: 
-  itemName: Pared de madera
-  description: Hecha de troncos super resistentes.
+  itemName: Wodden Wall
+  description: "Keeps enemies out\u2026 as long as they don\u2019t have an axe.\""
   itemIcon: {fileID: 21300000, guid: 10eac8250a2e822418f4645f703ef103, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 9215445874450599996, guid: 37fd52b7c48bcc0409ba50ef839f146f, type: 3}

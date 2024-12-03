@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Metal
   m_EditorClassIdentifier: 
   itemName: Metal
-  description: Fundamental para crear herramientas.
+  description: Strong, shiny, and slightly better than rocks.
   itemIcon: {fileID: 21300000, guid: e20a43c70ce2f764f810210e4d8eb007, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 7484085493989770997, guid: fe4cee178061dc9459cd795e8d5b9c6a, type: 3}

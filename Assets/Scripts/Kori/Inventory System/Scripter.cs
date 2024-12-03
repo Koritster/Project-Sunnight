@@ -186,5 +186,16 @@ public class Scripter : MonoBehaviour
         return recipes;
     }
 
+    public void ChangeBarValue()
+    {
+        StartCoroutine(ChangeBarValue(0.0001f));
+    }
+
+    IEnumerator ChangeBarValue(float time)
+    {
+        yield return new WaitForSeconds(time);
+        craftingScrollBar.value = 1;
+    }
+
     #endregion
 }

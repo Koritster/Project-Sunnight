@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
   m_Name: Microfono
   m_EditorClassIdentifier: 
-  itemName: Microfono
-  description: Una pieza fundamental de la radio
+  itemName: Microphone
+  description: "Sing your heart out\u2014or interrogate your friends in style."
   itemIcon: {fileID: 21300000, guid: a75f7c13b7edd9f4ca572100cc8048ce, type: 3}
   isStackable: 0
   objectPrefab: {fileID: 919132149155446097, guid: 67ae4ec5939d54542875a12697b84bb3, type: 3}

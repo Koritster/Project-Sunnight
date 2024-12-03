@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
   m_Name: Cuerpo de la radio
   m_EditorClassIdentifier: 
-  itemName: Cuerpo de la radio
-  description: Le faltan muchas piezas.
+  itemName: Radio body
+  description: Almost a radio. Just needs a few more parts and maybe a miracle.
   itemIcon: {fileID: 21300000, guid: bc527d9698b6d034788690933b105f72, type: 3}
   isStackable: 0
   objectPrefab: {fileID: 3328813124558645964, guid: 27d6eafbe6add6d429fab069c0f6cdc3, type: 3}

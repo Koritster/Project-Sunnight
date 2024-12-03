@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
   m_Name: Balas
   m_EditorClassIdentifier: 
-  itemName: Balas
-  description: Solo para m9.
+  itemName: Bullet
+  description: Tiny metal arguments to settle big disagreements.
   itemIcon: {fileID: 0}
   isStackable: 1
   objectPrefab: {fileID: 0}

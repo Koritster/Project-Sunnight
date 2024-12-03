@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour
             cs_Crafting.SetActive(true);
             cs_InGame.SetActive(false);
 
+            Scripter.scripter.ChangeBarValue();
+
             //Mision de abrir crafteo
             if (Scripter.scripter.questsSystem.questIndex == 2)
             {

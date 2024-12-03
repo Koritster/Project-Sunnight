@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
   m_Name: Madera
   m_EditorClassIdentifier: 
-  itemName: Madera
-  description: La mejor herramienta de todo carpintero.
+  itemName: Wood
+  description: "Nature\u2019s LEGO blocks. Build a house or burn it for marshmallows!"
   itemIcon: {fileID: 21300000, guid: 0251c2bffb2ccfc439d6fa6dd01c46db, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 5965572405899196060, guid: f3164ac2a7d203043b2e29d642975d4d, type: 3}

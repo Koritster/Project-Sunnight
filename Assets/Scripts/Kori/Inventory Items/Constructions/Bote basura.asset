@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dcd5e1081e6e34c8c2ca2395c8e96d, type: 3}
+  m_Name: Bote basura
+  m_EditorClassIdentifier: 
+  itemName: Trash can
+  description: Where bad ideas and half-eaten apples go to retire.
+  itemIcon: {fileID: 21300000, guid: bc6c46b94bc67c245b98b7099959acab, type: 3}
+  isStackable: 1
+  objectPrefab: {fileID: 5718853068190697809, guid: e9cf12f79d22d2d40bc8a22636ef63ca, type: 3}
+  objectPrefabPickable: {fileID: 5718853068190697809, guid: e9cf12f79d22d2d40bc8a22636ef63ca, type: 3}
+  constructionPrefab: {fileID: 253920883980539507, guid: 6cd7b7ab0a36cb2479a3b28a332d5193, type: 3}

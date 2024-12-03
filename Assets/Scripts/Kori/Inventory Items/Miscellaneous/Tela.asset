@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
   m_Name: Tela
   m_EditorClassIdentifier: 
-  itemName: Tela
-  description: Directa desde Parisina.
+  itemName: Cloth
+  description: Soft, versatile, and surprisingly bad at stopping bullets.
   itemIcon: {fileID: 21300000, guid: 16646344605327940aa67eed6fa1952d, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 2140027603340670581, guid: 8f34bee8e6b426940a8aef3e44a39637, type: 3}

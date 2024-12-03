@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
   m_Name: Piedra
   m_EditorClassIdentifier: 
-  itemName: Piedra
-  description: "El peor enemigo de los perritos, pero en su versi\xF3n visible."
+  itemName: Stone
+  description: Heavy, solid, and perfect for medieval-level problem-solving.
   itemIcon: {fileID: 21300000, guid: 97b0cc64a6aafc942a3f220c8abb5bc7, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 2379985269586093446, guid: 06c39f1e2a531ce4299098adaae9a8c7, type: 3}

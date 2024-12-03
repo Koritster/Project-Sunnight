@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb1a1f4a141a12d4ab45b4846dba3689, type: 3}
   m_Name: Manzana
   m_EditorClassIdentifier: 
-  itemName: Manzana
-  description: Una rica, gorda y jugosa manzana.
+  itemName: Apple
+  description: An apple a day keeps the zombies away. Probably.
   itemIcon: {fileID: 21300000, guid: fa01c8a7c4f062541be8e0d4b7a6691f, type: 3}
   isStackable: 1
   objectPrefab: {fileID: 4535152020436160410, guid: b419021ee1a13604abf8b102622c1600, type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7753231907855699705}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Radio completa InHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RuedaImpor2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d9aa48bf3feed244bc36806024b4f68, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -148,6 +152,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 67ae4ec5939d54542875a12697b84bb3, type: 3}
       propertyPath: m_Name
       value: Microphone
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67ae4ec5939d54542875a12697b84bb3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -211,6 +219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RuedaImpor1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5436435a7716ab442bded452b74bd3bd, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -272,6 +284,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9d48e9bb44c895a41af84f0ff76551b2, type: 3}
       propertyPath: m_Name
       value: Radio
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d48e9bb44c895a41af84f0ff76551b2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
