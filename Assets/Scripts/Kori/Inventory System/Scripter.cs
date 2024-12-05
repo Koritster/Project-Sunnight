@@ -169,21 +169,9 @@ public class Scripter : MonoBehaviour
 
     #region Crafting Functions
 
-    string folderPath = "Assets/Scripts/Kori/Inventory Items/Crafting Recipes";
-
     public CraftingRecipeClass[] LoadCraftingRecipes()
     {
-        // Obtiene las rutas de todos los archivos .asset en la carpeta especificada
-        string[] assetPaths = AssetDatabase.FindAssets("t:CraftingRecipeClass", new[] { folderPath });
-
-        CraftingRecipeClass[] recipes = new CraftingRecipeClass[assetPaths.Length];
-
-        // Convierte las rutas en objetos del tipo CraftingRecipeClass
-        for (int i = 0; i < assetPaths.Length; i++)
-        {
-            string path = AssetDatabase.GUIDToAssetPath(assetPaths[i]);
-            recipes[i] = AssetDatabase.LoadAssetAtPath<CraftingRecipeClass>(path);
-        }
+        CraftingRecipeClass[] recipes = Resources.LoadAll<CraftingRecipeClass>("");
 
         return recipes;
     }

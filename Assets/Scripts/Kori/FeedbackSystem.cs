@@ -45,11 +45,28 @@ public class FeedbackSystem : MonoBehaviour
             {
                 scripter.useRadioFeedbackUI.SetActive(true);
             }
-            /*else if(hit.collider.GetComponent<Campfire>())
+            else if(hit.collider.TryGetComponent<Campfire>(out Campfire c))
             {
                 scripter.useCampfireFeedbackUI.SetActive(true);
+                if (!c.withLogs)
+                {
+                    scripter.useCampfireFeedbackUI.transform.GetChild(0).gameObject.SetActive(true);
+                }
+                else if (!c.onFire)
+                {
+                    scripter.useCampfireFeedbackUI.transform.GetChild(1).gameObject.SetActive(true);
+                }
+                else if (Scripter.scripter.inventory.selectedItem.GetItem().name == "Raw meat")
+                {
+                    scripter.useCampfireFeedbackUI.transform.GetChild(2).gameObject.SetActive(true);
+                }
+                else
+                {
+                    scripter.useCampfireFeedbackUI.transform.GetChild(0).gameObject.SetActive(false);
+                    scripter.useCampfireFeedbackUI.transform.GetChild(1).gameObject.SetActive(false);
+                    scripter.useCampfireFeedbackUI.transform.GetChild(2).gameObject.SetActive(false);
+                }
             }
-             */
             else
             {
                 scripter.chestFeedbackUI.SetActive(false);

@@ -130,6 +130,21 @@ public class PlayerController : MonoBehaviour
 
                     Scripter.scripter.gameObject.GetComponent<SceneManager>().ChangeSceneByName("WinAnimation");
                 }
+                else if (hit.collider.TryGetComponent<Campfire>(out Campfire c))
+                {
+                    if (!c.withLogs)
+                    {
+                        c.ColocarTroncos();
+                    }
+                    else if (!c.onFire)
+                    {
+                        c.Encender();
+                    }
+                    else if (Scripter.scripter.inventory.selectedItem.GetItem().name == "Raw meat")
+                    {
+                        Debug.Log("No deberías estar viendo esto");
+                    }
+                }
             }
             else
             {
@@ -138,7 +153,6 @@ public class PlayerController : MonoBehaviour
                     CloseAllCanvas();
                 }
             }
-            //
         }
         //Usar objetos
         else if (Input.GetMouseButtonDown(0) && !isInventoryOpen)
