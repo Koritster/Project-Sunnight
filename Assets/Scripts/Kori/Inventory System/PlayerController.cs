@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
                         Scripter.scripter.questsSystem.CompleteQuestAnim();
                     }
 
-                    Scripter.scripter.gameObject.GetComponent<SceneManager>().ChangeSceneByName("WinAnimation");
+                    Scripter.scripter.gameObject.GetComponent<SceneManager>().ChangeSceneByName("win");
                 }
                 else if (hit.collider.TryGetComponent<Campfire>(out Campfire c))
                 {
