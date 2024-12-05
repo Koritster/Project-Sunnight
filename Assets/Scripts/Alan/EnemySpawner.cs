@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -25,6 +26,14 @@ public class EnemySpawner : MonoBehaviour
         float randomX = Random.Range(-spawnRange, spawnRange);
 
         Vector3 newPos = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(newPos, out hit, 20f, NavMesh.AllAreas))
+        {
+            // Retorna la posición ajustada al NavMesh
+            return hit.position; 
+        }
+
         return newPos;
     }
 
@@ -48,14 +57,5 @@ public class EnemySpawner : MonoBehaviour
         // Elegir un enemigo aleatorio del arreglo y spawnearlo en una posición aleatoria
         Instantiate(enemiesSpawn[Random.Range(0, enemiesSpawn.Length)], RandomSpawn(), Quaternion.identity);
         Debug.Log("Spawneo un chango");
-    }
-
-    private void OnDrawGizmos()
-    {
-        // Configurar el color del Gizmo
-        Gizmos.color = new Color(1, 0, 0, 0.5f); // Rojo semitransparente
-
-        // Dibujar un círculo que representa el rango de spawn
-        Gizmos.DrawWireSphere(transform.position, spawnRange);
     }
 }

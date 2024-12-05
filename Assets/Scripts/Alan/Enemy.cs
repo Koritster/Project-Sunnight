@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour
     //navegación
     public void Awake()
     {
-        agent = transform.GetChild(0).GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
         //player = GameObject.FindWithTag("Player").transform;
         player = Scripter.scripter.player.transform;
     }
@@ -89,11 +89,17 @@ public class Enemy : MonoBehaviour
         {
             SearchWalkpoint();
         }
-        if (walkpointSet)
+        if (walkpointSet && agent.isOnNavMesh)
         {
             agent.SetDestination(walkpoint);
         }
-        
+        else
+        {
+            // Si el agente no está en el NavMesh, destruirlo o realizar alguna acción
+            DestroyEnemy();
+            return;
+        }
+
         Vector3 distanceToWalkPoint = transform.position - walkpoint;
 
         // Se llego al Punto de destino
@@ -185,17 +191,24 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
-    }
-
     // Coroutine para la pausa del patrullaje
     IEnumerator PatrolWithPause()
     {
+        if (agent.isOnNavMesh)
+        {
+            agent.isStopped = true;
+            anim.SetBool("Walking", false);
+            yield return new WaitForSeconds(patrolPauseTime);
+            agent.isStopped = false;
+        }
+        else
+        {
+            Debug.LogWarning("El agente no está en el NavMesh durante la pausa");
+            DestroyEnemy();
+            Debug.Log("Enemigo destruido porque no está en el NavMesh");
+        }
+
+
         // Esperar el tiempo de pausa antes de continuar
         agent.isStopped = true;
         anim.SetBool("Walking", false);
@@ -204,4 +217,18 @@ public class Enemy : MonoBehaviour
         isPatrolling = true;
         anim.SetBool("Walking", true);
     }
+
+    /*private void RepositionAgent()
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
+        {
+            agent.Warp(hit.position);  // Mover al agente a una posición válida sobre el NavMesh
+            Debug.Log("Agente reposicionado en el NavMesh");
+        }
+        else
+        {
+            Debug.LogError("No se pudo reposicionar al agente sobre el NavMesh.");
+        }
+    }*/
 }
