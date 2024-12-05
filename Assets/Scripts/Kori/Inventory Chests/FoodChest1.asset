@@ -17,11 +17,11 @@ MonoBehaviour:
     probabilities: {x: -5, y: 5}
     quantity: 0
   - item: {fileID: 11400000, guid: b65111685de622243a49f005339592d6, type: 2}
-    probabilities: {x: -2, y: 3}
+    probabilities: {x: 0, y: 7}
     quantity: 0
   - item: {fileID: 11400000, guid: 29106aa626cc73e40a070aa1a1236f30, type: 2}
-    probabilities: {x: 1, y: 1}
+    probabilities: {x: 1, y: 2}
     quantity: 0
   - item: {fileID: 11400000, guid: f30f1c6102574804fa6e4c4088196828, type: 2}
-    probabilities: {x: -8, y: 1}
+    probabilities: {x: -5, y: 1}
     quantity: 0

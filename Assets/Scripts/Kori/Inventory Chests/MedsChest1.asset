@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsToSpawn:
   - item: {fileID: 11400000, guid: d8e411a8984f0b14394a514c4c98cd81, type: 2}
-    probabilities: {x: -3, y: 1}
+    probabilities: {x: 0, y: 1}
     quantity: 0
   - item: {fileID: 11400000, guid: b65111685de622243a49f005339592d6, type: 2}
-    probabilities: {x: 0, y: 1}
+    probabilities: {x: 1, y: 5}
     quantity: 0
   - item: {fileID: 11400000, guid: 3a515b56283010746a6c57ce25ed8cbd, type: 2}
     probabilities: {x: 1, y: 5}

@@ -29,7 +29,7 @@ MonoBehaviour:
     probabilities: {x: -3, y: 1}
     quantity: 0
   - item: {fileID: 11400000, guid: b65111685de622243a49f005339592d6, type: 2}
-    probabilities: {x: 1, y: 3}
+    probabilities: {x: 1, y: 5}
     quantity: 0
   - item: {fileID: 11400000, guid: e8d2932ca84ecb0488e8a8febaeba2b2, type: 2}
     probabilities: {x: -1, y: 3}

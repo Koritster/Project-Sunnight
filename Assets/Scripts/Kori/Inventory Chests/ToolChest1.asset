@@ -23,13 +23,13 @@ MonoBehaviour:
     probabilities: {x: 1, y: 3}
     quantity: 0
   - item: {fileID: 11400000, guid: 088763974cf79604e9fc974d3fb4bf71, type: 2}
-    probabilities: {x: -5, y: 1}
+    probabilities: {x: 0, y: 1}
     quantity: 0
   - item: {fileID: 11400000, guid: a3371a0ddea9fdc458b9c73cdbf68118, type: 2}
-    probabilities: {x: -5, y: 1}
+    probabilities: {x: 0, y: 1}
     quantity: 0
   - item: {fileID: 11400000, guid: aae5ff20437c72f45a2a77b4cdabb630, type: 2}
-    probabilities: {x: -5, y: 1}
+    probabilities: {x: 0, y: 1}
     quantity: 0
   - item: {fileID: 11400000, guid: c4c6b6ba9fd4ec648aa1e8b7fcf79d1e, type: 2}
     probabilities: {x: 0, y: 3}
