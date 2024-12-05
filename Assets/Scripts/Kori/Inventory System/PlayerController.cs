@@ -167,9 +167,11 @@ public class PlayerController : MonoBehaviour
         {
             if(Scripter.scripter.inventory.selectedItem.GetConstruction() != null)
             {
-                Debug.Log("Rotando...");
                 float y = Input.GetAxis("Rotate");
-                Scripter.scripter.constructionPreview.transform.Rotate(0, speedRotation * y * Time.deltaTime, 0);
+                if(y > 0)
+                {
+                    Scripter.scripter.constructionPreview.transform.Rotate(0, speedRotation * y * Time.deltaTime, 0);
+                }
             }
         }
 

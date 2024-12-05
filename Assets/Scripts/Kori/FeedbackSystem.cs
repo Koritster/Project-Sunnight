@@ -98,6 +98,8 @@ public class FeedbackSystem : MonoBehaviour
                     constructionPreview = Instantiate(prefab);
                     scripter.constructionPreview = constructionPreview;
                     constructionCollider = constructionPreview.GetComponent<BoxCollider>();
+
+                    Debug.Log("Se reemplazo la construccion");
                 }
                 else if (constructionPreview == null)
                 {
@@ -105,6 +107,7 @@ public class FeedbackSystem : MonoBehaviour
                     constructionPreview = Instantiate(prefab);
                     scripter.constructionPreview = constructionPreview;
                     constructionCollider = constructionPreview.GetComponent<BoxCollider>();
+                    Debug.Log("Se instancio una construccion");
                 }
 
                 Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -130,6 +133,9 @@ public class FeedbackSystem : MonoBehaviour
         //Destruir el preview
         else if (constructionPreview != null && constructionCollider.isTrigger)
         {
+            if (construction.GetConstruction().placed)
+                return;
+
             Destroy(constructionPreview);
             constructionPreview = null;
             constructionCollider = null;

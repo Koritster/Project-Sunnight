@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2334468561551298752}
   - component: {fileID: 2353202792655665703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ParedVentanaTronco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,8 +30,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1270945386629593888}
   - {fileID: 890403366746932261}
+  - {fileID: 1270945386629593888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2353202792655665703
@@ -49,7 +49,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

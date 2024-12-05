@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6636396355636417953}
   - component: {fileID: 5415694654168157777}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ParedPiedra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,8 +30,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 199228587052499860}
   - {fileID: 8052386683347589864}
+  - {fileID: 199228587052499860}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5415694654168157777
@@ -49,7 +49,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
