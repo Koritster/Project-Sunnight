@@ -22,7 +22,8 @@ public class Campfire : MonoBehaviour
 
     public void Encender()
     {
-        fireParticles.gameObject.SetActive(true);
+        onFire = true;
+        fireParticles.gameObject.SetActive(onFire);
         withLogs = false;
         logs.SetActive(withLogs);
         fireParticles.Play();

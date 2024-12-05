@@ -104,6 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7567860399873996602}
   - component: {fileID: 4724110255685890823}
+  - component: {fileID: 6009315148396128877}
   m_Layer: 3
   m_Name: Fogata
   m_TagString: Untagged
@@ -149,6 +150,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.75, y: 0.35909343, z: 1.75}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6009315148396128877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4337010204371963455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4c40900fb6e1204eb01f85843e3c97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onFire: 0
+  withLogs: 1
+  fireParticles: {fileID: 4031243074757145101}
+  logs: {fileID: 2398305621990808165}
+  logItemReference: {fileID: 11400000, guid: c4c6b6ba9fd4ec648aa1e8b7fcf79d1e, type: 2}
 --- !u!1001 &3353758711227663692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,6 +223,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1135627864969666345, guid: 69a516d8abc8bc5499e4f9682f8704d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6820857607928300936, guid: 69a516d8abc8bc5499e4f9682f8704d9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -217,6 +239,11 @@ PrefabInstance:
       addedObject: {fileID: 4031243074757145098}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69a516d8abc8bc5499e4f9682f8704d9, type: 3}
+--- !u!1 &2398305621990808165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1135627864969666345, guid: 69a516d8abc8bc5499e4f9682f8704d9, type: 3}
+  m_PrefabInstance: {fileID: 3353758711227663692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2954441319720002215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69a516d8abc8bc5499e4f9682f8704d9, type: 3}
@@ -345,6 +372,11 @@ PrefabInstance:
 --- !u!4 &4031243074757145098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 56852242586695114, guid: 4d7e19c9fcb52be4bb9a8ba855ffe12d, type: 3}
+  m_PrefabInstance: {fileID: 3978966451287967680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4031243074757145101 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 56852242586695117, guid: 4d7e19c9fcb52be4bb9a8ba855ffe12d, type: 3}
   m_PrefabInstance: {fileID: 3978966451287967680}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4891411548208611916

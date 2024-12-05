@@ -48,18 +48,19 @@ public class FeedbackSystem : MonoBehaviour
             else if(hit.collider.TryGetComponent<Campfire>(out Campfire c))
             {
                 scripter.useCampfireFeedbackUI.SetActive(true);
-                if (!c.withLogs)
+                if (!c.withLogs && !c.onFire)
                 {
                     scripter.useCampfireFeedbackUI.transform.GetChild(0).gameObject.SetActive(true);
                 }
-                else if (!c.onFire)
+                else if (!c.onFire && c.withLogs)
                 {
+                    Debug.Log("Puedes encender esta madre");
                     scripter.useCampfireFeedbackUI.transform.GetChild(1).gameObject.SetActive(true);
                 }
-                else if (Scripter.scripter.inventory.selectedItem.GetItem().name == "Raw meat")
-                {
-                    scripter.useCampfireFeedbackUI.transform.GetChild(2).gameObject.SetActive(true);
-                }
+                //else if (Scripter.scripter.inventory.selectedItem.GetItem().name == "Raw meat")
+                //{
+                    //scripter.useCampfireFeedbackUI.transform.GetChild(2).gameObject.SetActive(true);
+                //}
                 else
                 {
                     scripter.useCampfireFeedbackUI.transform.GetChild(0).gameObject.SetActive(false);
