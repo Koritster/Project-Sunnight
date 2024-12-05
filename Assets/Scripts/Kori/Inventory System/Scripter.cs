@@ -47,6 +47,8 @@ public class Scripter : MonoBehaviour
     public GameObject constructionFeedbackUI;
     public GameObject chestFeedbackUI;
     public GameObject grabItemsFeedbackUI;
+    public GameObject useRadioFeedbackUI;
+    public GameObject useCampfireFeedbackUI;
 
     [Header("Quests System Attributes")]
     public QuestsSystem questsSystem;

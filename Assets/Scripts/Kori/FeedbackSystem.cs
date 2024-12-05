@@ -41,10 +41,21 @@ public class FeedbackSystem : MonoBehaviour
             {
                 scripter.grabItemsFeedbackUI.SetActive(true);
             }
+            else if (hit.collider.GetComponent<Radio>())
+            {
+                scripter.useRadioFeedbackUI.SetActive(true);
+            }
+            /*else if(hit.collider.GetComponent<Campfire>())
+            {
+                scripter.useCampfireFeedbackUI.SetActive(true);
+            }
+             */
             else
             {
                 scripter.chestFeedbackUI.SetActive(false);
                 scripter.grabItemsFeedbackUI.SetActive(false);
+                scripter.useRadioFeedbackUI.SetActive(false);
+                scripter.useCampfireFeedbackUI.SetActive(false);
             }
 
         }

@@ -118,12 +118,17 @@ public class PlayerController : MonoBehaviour
                 {
                     obj.PickItem();
                 }
-                else if (hit.collider.CompareTag("Radio"))
+                else if (hit.collider.gameObject.TryGetComponent<Radio>(out Radio r))
                 {
+                    if (!r.CheckWin())
+                        return;
+
                     if(Scripter.scripter.questsSystem.questIndex == (Scripter.scripter.questsSystem.quests.Length - 1))
                     {
                         Scripter.scripter.questsSystem.CompleteQuestAnim();
                     }
+
+                    Scripter.scripter.gameObject.GetComponent<SceneManager>().ChangeSceneByName("WinAnimation");
                 }
             }
             else
