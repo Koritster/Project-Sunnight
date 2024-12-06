@@ -15,7 +15,7 @@ MonoBehaviour:
   objectName: Zombie
   toolType: 1
   soundEffect: {fileID: 8300000, guid: 5021b1c150280604ca661f77e5e1403f, type: 3}
-  lifePoints: 35
+  lifePoints: 30
   dropItems:
   - item: {fileID: 11400000, guid: 3a515b56283010746a6c57ce25ed8cbd, type: 2}
     probabilities: {x: 1, y: 3}

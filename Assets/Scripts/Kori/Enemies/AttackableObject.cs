@@ -19,12 +19,14 @@ public class AttackableObject : MonoBehaviour, IAttackable
 
     public void Hurt(ToolClass tool, int damagePoints)
     {
-        if (obj.toolType.ToString() == "None")
+        Debug.Log(obj.toolType.ToString());
+
+        if (obj.toolType.ToString() == "none")
         {
             return;
         }
 
-        if (obj.toolType.ToString() != "Any")
+        if (obj.toolType.ToString() != "any")
         {
             //Si la herramienta coincide
             if (tool.toolType.ToString() == obj.toolType.ToString())
@@ -42,6 +44,8 @@ public class AttackableObject : MonoBehaviour, IAttackable
         {
             lifePoints -= damagePoints;
         }
+
+        Debug.Log(lifePoints);
 
         if(lifePoints > 0)
         {
@@ -63,11 +67,9 @@ public class AttackableObject : MonoBehaviour, IAttackable
     {
         if(lifePoints <= 0) 
         {
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<BoxCollider>().enabled = false;
             DropItems();
-            yield return new WaitForSeconds(1f);
-            gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.1f);
+            Destroy(gameObject);
         }
     }
 
@@ -85,7 +87,7 @@ public class AttackableObject : MonoBehaviour, IAttackable
             for (int j = 0; j < obj.dropItems[i].quantity; j++)
             {
                 GameObject itemPickable = Instantiate(obj.dropItems[i].item.objectPrefabPickable, Vector3.zero, Quaternion.identity, gameObject.transform);
-                itemPickable.transform.localPosition = new Vector3(Random.Range(-1f, 1f), render.bounds.size.y/10, Random.Range(-1f, 1f));
+                itemPickable.transform.localPosition = new Vector3(Random.Range(-1f, 1f), 3f, Random.Range(-1f, 1f));
                 itemPickable.transform.parent = null;
                 itemPickable.transform.localScale = obj.dropItems[i].item.objectPrefabPickable.transform.localScale;
             }

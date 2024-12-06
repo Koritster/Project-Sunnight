@@ -56,6 +56,5 @@ public class EnemySpawner : MonoBehaviour
     {
         // Elegir un enemigo aleatorio del arreglo y spawnearlo en una posición aleatoria
         Instantiate(enemiesSpawn[Random.Range(0, enemiesSpawn.Length)], RandomSpawn(), Quaternion.identity);
-        Debug.Log("Spawneo un chango");
     }
 }

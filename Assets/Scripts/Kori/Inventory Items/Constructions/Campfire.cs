@@ -21,19 +21,24 @@ public class Campfire : MonoBehaviour
     }
 
     public void Encender()
-    {
+    {               
+        Scripter.scripter.useCampfireFeedbackUI.transform.GetChild(1).gameObject.SetActive(false);
+        
         onFire = true;
         fireParticles.gameObject.SetActive(onFire);
         withLogs = false;
         logs.SetActive(withLogs);
         fireParticles.Play();
-        StartCoroutine(DuracionFuego(300));
+        StartCoroutine(DuracionFuego(3));
     }
 
     public void ColocarTroncos()
     {
+        Scripter.scripter.useCampfireFeedbackUI.transform.GetChild(0).gameObject.SetActive(false);
+
         if (Scripter.scripter.inventory.Contains(logItemReference, 3))
         {
+            Scripter.scripter.inventory.Remove(logItemReference, 3);
             withLogs = true;
             logs.SetActive(withLogs);
         }
@@ -42,8 +47,8 @@ public class Campfire : MonoBehaviour
     IEnumerator DuracionFuego(float secs)
     {
         yield return new WaitForSeconds(secs);
-        fireParticles.Stop();
-        fireParticles.gameObject.SetActive(false);
+        onFire = false;
+        fireParticles.gameObject.SetActive(onFire);
     }
 
 }

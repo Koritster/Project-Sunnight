@@ -134,15 +134,14 @@ public class FeedbackSystem : MonoBehaviour
         //Destruir el preview
         else if (constructionPreview != null && constructionCollider.isTrigger)
         {
-            if (construction.GetConstruction().placed)
-                return;
-
-            Destroy(constructionPreview);
-            constructionPreview = null;
-            constructionCollider = null;
-            scripter.constructionPreview = null;
-
-            scripter.constructionFeedbackUI.SetActive(false);
+            if (!construction.GetConstruction().placed)
+            {
+                Destroy(constructionPreview);
+                constructionPreview = null;
+                constructionCollider = null;
+                scripter.constructionPreview = null;
+                scripter.constructionFeedbackUI.SetActive(false);
+            }
         }
 
         if (constructionPreview != null)

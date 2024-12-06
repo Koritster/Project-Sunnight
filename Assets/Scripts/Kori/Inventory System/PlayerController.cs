@@ -140,10 +140,10 @@ public class PlayerController : MonoBehaviour
                     {
                         c.Encender();
                     }
-                    else if (Scripter.scripter.inventory.selectedItem.GetItem().name == "Raw meat")
+                    /*else if (Scripter.scripter.inventory.selectedItem.GetItem().name == "Raw meat")
                     {
                         Debug.Log("No deberías estar viendo esto");
-                    }
+                    }*/
                 }
             }
             else

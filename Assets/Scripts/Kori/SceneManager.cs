@@ -31,6 +31,8 @@ public class SceneManager : MonoBehaviour
     public void Start()
     {
         StartCoroutine(FadeInStart());
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     IEnumerator FadeToChanceScene(string scene)

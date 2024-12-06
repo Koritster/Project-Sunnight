@@ -152,13 +152,14 @@ public class hambre_vida_Agua : MonoBehaviour
         if (tiempoPerdidaVida <= 0f)
         {
             vida -= cantidadPerdidaVida;
-            if (vida <= 0f)
-            {
-                vida = 0f;
-                Debug.LogWarning("El jugador ha muerto");
-                Scripter.scripter.gameObject.GetComponent<SceneManager>().ChangeSceneByName("GameOver");
-            }
+            
             tiempoPerdidaVida = velocidadPerdidaVida;
+        }
+
+        if (vida <= 0)
+        {
+            Debug.LogWarning("El jugador ha muerto");
+            Scripter.scripter.gameObject.GetComponent<SceneManager>().ChangeSceneByName("GameOver");
         }
 
         ActualizarFillAmount(vida_img, vida);
