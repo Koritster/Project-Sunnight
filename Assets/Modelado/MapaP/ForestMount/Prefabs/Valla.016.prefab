@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3465893161207842274}
   - component: {fileID: 2977476237605987278}
   - component: {fileID: 2869797810343137322}
+  - component: {fileID: 1585340778657361540}
+  - component: {fileID: 1613632532095175876}
   m_Layer: 0
   m_Name: Valla.016
   m_TagString: Untagged
@@ -83,3 +85,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1585340778657361540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188901858591083869}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3444499, y: 0.0028101504, z: 0.1}
+  m_Center: {x: 0.011096668, y: -0.0012842034, z: 0.0011378098}
+--- !u!65 &1613632532095175876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188901858591083869}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0021881305, y: 0.044789206, z: 0.1}
+  m_Center: {x: -0.16003512, y: 0.019705435, z: 0.0011378089}

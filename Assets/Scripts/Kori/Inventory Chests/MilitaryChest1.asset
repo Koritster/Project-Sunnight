@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5bcb0706456bb64f8c05992150f3a7a, type: 3}
+  m_Name: MilitaryChest1
+  m_EditorClassIdentifier: 
+  itemsToSpawn:
+  - item: {fileID: 11400000, guid: 377290f71c8957e4d80856863435dfe3, type: 2}
+    probabilities: {x: -3, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 8384253aa85b0ad4d91b37f92f5bdb56, type: 2}
+    probabilities: {x: -3, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: f30f1c6102574804fa6e4c4088196828, type: 2}
+    probabilities: {x: 0, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 23784b4f2e6e9a74e9dfde2d48603ddc, type: 2}
+    probabilities: {x: -10, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: d8e411a8984f0b14394a514c4c98cd81, type: 2}
+    probabilities: {x: -3, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: b65111685de622243a49f005339592d6, type: 2}
+    probabilities: {x: 1, y: 5}
+    quantity: 0
+  - item: {fileID: 11400000, guid: e8d2932ca84ecb0488e8a8febaeba2b2, type: 2}
+    probabilities: {x: -1, y: 3}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 3a515b56283010746a6c57ce25ed8cbd, type: 2}
+    probabilities: {x: 1, y: 4}
+    quantity: 0
+  - item: {fileID: 11400000, guid: 088763974cf79604e9fc974d3fb4bf71, type: 2}
+    probabilities: {x: -5, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: a3371a0ddea9fdc458b9c73cdbf68118, type: 2}
+    probabilities: {x: -5, y: 1}
+    quantity: 0
+  - item: {fileID: 11400000, guid: aae5ff20437c72f45a2a77b4cdabb630, type: 2}
+    probabilities: {x: -5, y: 1}
+    quantity: 0

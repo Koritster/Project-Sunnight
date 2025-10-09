@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dcd5e1081e6e34c8c2ca2395c8e96d, type: 3}
+  m_Name: Fogata
+  m_EditorClassIdentifier: 
+  itemName: Campfire
+  description: Cozy vibes guaranteed. Also doubles as an emergency cooking station!
+  itemIcon: {fileID: 21300000, guid: 8011f57b971a4d44798ccada0bcd2e5f, type: 3}
+  isStackable: 1
+  objectPrefab: {fileID: 4884079363111591129, guid: b40b7ede30bd0ca4a9a67208162bf725, type: 3}
+  objectPrefabPickable: {fileID: 4884079363111591129, guid: b40b7ede30bd0ca4a9a67208162bf725, type: 3}
+  constructionPrefab: {fileID: 4337010204371963455, guid: 45aaeb9a0700acf4ca3dd77aebf15721, type: 3}

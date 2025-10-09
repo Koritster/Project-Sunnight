@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6898d9afc140e7b48bd2e4fab10a0bb6, type: 3}
+  m_Name: Madera
+  m_EditorClassIdentifier: 
+  itemName: Wood
+  description: "Nature\u2019s LEGO blocks. Build a house or burn it for marshmallows!"
+  itemIcon: {fileID: 21300000, guid: 0251c2bffb2ccfc439d6fa6dd01c46db, type: 3}
+  isStackable: 1
+  objectPrefab: {fileID: 5965572405899196060, guid: f3164ac2a7d203043b2e29d642975d4d, type: 3}
+  objectPrefabPickable: {fileID: 3360321874992627731, guid: a92e10310a7adae40a75d769f6474240, type: 3}

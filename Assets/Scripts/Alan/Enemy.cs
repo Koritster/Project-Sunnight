@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(Animator))]
 public class Enemy : MonoBehaviour
 {
     //identificador del NavMeshAgent
@@ -39,9 +41,18 @@ public class Enemy : MonoBehaviour
     //States
     public float sightRange, attackRange;
     bool playerInSightRange, playerInaAttackRange;
+
+    [SerializeField]
+    private AudioClip onHit;
+    [SerializeField]
+    private AudioClip[] randomNoises;
+
+    private Animator anim;
+    private AudioSource audSource;
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -68,7 +79,8 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Player").transform;
+        //player = GameObject.FindWithTag("Player").transform;
+        player = Scripter.scripter.player.transform;
     }
 
     private void Patroling()
@@ -77,11 +89,17 @@ public class Enemy : MonoBehaviour
         {
             SearchWalkpoint();
         }
-        if (walkpointSet)
+        if (walkpointSet && agent.isOnNavMesh)
         {
             agent.SetDestination(walkpoint);
         }
-        
+        else
+        {
+            // Si el agente no está en el NavMesh, destruirlo o realizar alguna acción
+            DestroyEnemy();
+            return;
+        }
+
         Vector3 distanceToWalkPoint = transform.position - walkpoint;
 
         // Se llego al Punto de destino
@@ -125,6 +143,12 @@ public class Enemy : MonoBehaviour
     {
         //El enemigo persigue al jugador
         agent.SetDestination(player.position);
+        
+        if (!anim.GetBool("Running"))
+        {
+            anim.SetBool("Running", true);
+            anim.SetBool("Walking", false);
+        }
     }
     private void AttackPlayer()
     {
@@ -140,15 +164,17 @@ public class Enemy : MonoBehaviour
             }
 
             alreadyAttacked = true;
+            anim.SetTrigger("Attack");
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+
     }
     private void ResetAttack()
     {
         alreadyAttacked = false;
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
 
@@ -156,6 +182,8 @@ public class Enemy : MonoBehaviour
         {
             Invoke(nameof(DestroyEnemy), .5f);
         }
+        audSource.clip = onHit;
+        audSource.Play();
     }
 
     private void DestroyEnemy()
@@ -163,21 +191,44 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, sightRange);
-    }
-
     // Coroutine para la pausa del patrullaje
     IEnumerator PatrolWithPause()
     {
+        if (agent.isOnNavMesh)
+        {
+            agent.isStopped = true;
+            anim.SetBool("Walking", false);
+            yield return new WaitForSeconds(patrolPauseTime);
+            agent.isStopped = false;
+        }
+        else
+        {
+            Debug.LogWarning("El agente no está en el NavMesh durante la pausa");
+            DestroyEnemy();
+            Debug.Log("Enemigo destruido porque no está en el NavMesh");
+        }
+
+
         // Esperar el tiempo de pausa antes de continuar
         agent.isStopped = true;
+        anim.SetBool("Walking", false);
         yield return new WaitForSeconds(patrolPauseTime);
         agent.isStopped = false;
         isPatrolling = true;
+        anim.SetBool("Walking", true);
     }
+
+    /*private void RepositionAgent()
+    {
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(transform.position, out hit, 10f, NavMesh.AllAreas))
+        {
+            agent.Warp(hit.position);  // Mover al agente a una posición válida sobre el NavMesh
+            Debug.Log("Agente reposicionado en el NavMesh");
+        }
+        else
+        {
+            Debug.LogError("No se pudo reposicionar al agente sobre el NavMesh.");
+        }
+    }*/
 }

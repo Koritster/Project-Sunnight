@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba9b83098136d848a3c4fd32fb76310, type: 3}
+  m_Name: Pistola
+  m_EditorClassIdentifier: 
+  itemName: Gun
+  description: Point, aim, pew pew! Comes with a free dose of adrenaline.
+  itemIcon: {fileID: 21300000, guid: c933943a3345c054d9d8c13c3f24f854, type: 3}
+  isStackable: 0
+  objectPrefab: {fileID: 1043087746978650365, guid: d2c13ce2fbd5aff48a6297b9d874c0af, type: 3}
+  objectPrefabPickable: {fileID: 0}
+  toolType: 3
+  damagePoints: 10
+  rayLenght: 4
+  toolSprite: {fileID: 21300000, guid: 047a42f4fee492e4e97d225b032da5c8, type: 3}
+  ammo: {fileID: 11400000, guid: 84607c733e019e7489319438cec2751a, type: 2}

@@ -42,9 +42,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+
+        private Animator anim;
+
         // Use this for initialization
         private void Start()
         {
+            anim = GetComponent<Animator>();
+
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -80,14 +85,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
-            if (Input.GetKeyDown(KeyCode.I))
-            {
-                m_MouseLook.OpenAndCloseMenu();
-            }
-
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
-
 
         private void PlayLandingSound()
         {
@@ -96,9 +95,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_NextStep = m_StepCycle + .5f;
         }
 
-
         private void FixedUpdate()
         {
+            m_MouseLook.UpdateCursorLock();
+
+            if (isMenuOpen)
+            {
+                return;
+            }
+
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
@@ -134,8 +139,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
-
-            m_MouseLook.UpdateCursorLock();
         }
 
 
@@ -218,6 +221,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
@@ -227,6 +231,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (m_Input.sqrMagnitude > 1)
             {
                 m_Input.Normalize();
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift) && m_Input.sqrMagnitude > 0.1)
+            {
+                anim.SetBool("Walking", true);
+                anim.speed = 1.2f;
+            }
+            else if (m_Input.sqrMagnitude > 0.1)
+            {
+                anim.SetBool("Walking", true);
+                anim.speed = 1f;
+            }
+            else
+            {
+                anim.SetBool("Walking", false);
+                anim.speed = 1f;
             }
 
             // handle speed change to give an fov kick
@@ -259,6 +279,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        private bool isMenuOpen;
+
+        public void OpenAndClose()
+        {
+            isMenuOpen = m_MouseLook.OpenAndCloseMenu();
         }
     }
 }

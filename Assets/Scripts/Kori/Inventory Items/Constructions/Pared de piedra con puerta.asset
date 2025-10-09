@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33dcd5e1081e6e34c8c2ca2395c8e96d, type: 3}
+  m_Name: Pared de piedra con puerta
+  m_EditorClassIdentifier: 
+  itemName: Stone wall with doo
+  description: The ultimate combination of security and accessibility. Heavy-duty
+    chic.
+  itemIcon: {fileID: 21300000, guid: 121e5e9064afeda4cb0d2fa9a6820616, type: 3}
+  isStackable: 1
+  objectPrefab: {fileID: 7411707371621804464, guid: 1994be85c4e750744bdd1393d00f0f09, type: 3}
+  objectPrefabPickable: {fileID: 7411707371621804464, guid: 1994be85c4e750744bdd1393d00f0f09, type: 3}
+  constructionPrefab: {fileID: 6494323420170750391, guid: 8985416ca71a1cb41b1dbcfeb2e8ab08, type: 3}

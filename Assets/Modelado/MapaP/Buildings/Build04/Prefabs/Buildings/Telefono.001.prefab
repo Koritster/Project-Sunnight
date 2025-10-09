@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2094747973556753785}
   - component: {fileID: 1574489455783165001}
   - component: {fileID: 7476969666646041552}
+  - component: {fileID: 9162710975616392135}
   m_Layer: 0
   m_Name: Telefono.001
   m_TagString: Untagged
@@ -84,3 +85,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9162710975616392135
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3384546970108373139}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05905512, y: 0.019685036, z: 0.042962857}
+  m_Center: {x: 0.0055319043, y: 0.0002601705, z: -0.017171115}
